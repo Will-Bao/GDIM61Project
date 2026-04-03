@@ -3,6 +3,7 @@ using UnityEngine;
 /// <summary>
 /// Handles an entity's velocity-based movement.
 /// </summary>
+[RequireComponent(typeof(Rigidbody2D))]
 public class MovementHandler : MonoBehaviour
 {
     private Rigidbody2D _rb;
@@ -21,7 +22,8 @@ public class MovementHandler : MonoBehaviour
             _velocity = Vector2.zero;
             return;
         }
-        _velocity = (direction * speed);
+        _velocity.x = (direction * speed).x;
+        Debug.Log(_velocity);
     }
 
     /// <summary>
@@ -32,6 +34,11 @@ public class MovementHandler : MonoBehaviour
     {
         _canMove = canMove;
         if (canMove == false) _velocity = Vector2.zero;
+    }
+
+    private void Start()
+    {
+        _rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
