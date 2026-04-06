@@ -3,25 +3,21 @@ using UnityEngine;
 public class Player : StateMachineCore
 {
     [Header("States")]
-    [SerializeField] private AnimationState _idle;
+    [SerializeField] private PlayerMoveState _walk;
+    [SerializeField] private PlayerMoveState _crounch;
 
     [Header("Components")]
     [SerializeField] private InputManager _inputManager;
-    [SerializeField] private MovementHandler _movement;
-
-    [Header("Stats")]
-    [SerializeField] private float _moveSpeed;
 
     private void Start()
     {
         SetupInstances();
-        machine.Set(_idle);
+        machine.Set(_walk);
     }
 
     private void Update()
     {
         SetFacingDirection();
-        HandleMovement();
         SelectStates();
         machine.state.DoBranch();
     }
@@ -33,11 +29,13 @@ public class Player : StateMachineCore
 
     private void SelectStates()
     {
-        machine.Set(_idle);
-    }
-
-    private void HandleMovement()
-    {
-        _movement.SetHorizontalMovement(_inputManager.MoveInput, _moveSpeed);
+        if (_inputManager.MoveInput.y < 0)
+        {
+            machine.Set(_crounch);
+        }
+        else
+        {
+            machine.Set(_walk);
+        }
     }
 }
