@@ -22,7 +22,7 @@ public class MovementHandler : MonoBehaviour
             _velocity = Vector2.zero;
             return;
         }
-        _velocity.x = (direction * speed).x;
+        _velocity.x = (direction.normalized * speed).x;
     }
 
     /// <summary>
