@@ -23,7 +23,6 @@ public class MovementHandler : MonoBehaviour
             return;
         }
         _velocity.x = (direction * speed).x;
-        Debug.Log(_velocity);
     }
 
     /// <summary>
