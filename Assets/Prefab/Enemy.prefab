@@ -335,7 +335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _chase: {fileID: 1027268291228485194}
   _movement: {fileID: 997381869543015884}
-  _chaseSpeed: 5
+  _chaseSpeed: 6
   _stoppingDistance: 0.1
 --- !u!1 &7094317618714969454
 GameObject:
