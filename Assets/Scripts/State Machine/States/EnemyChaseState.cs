@@ -6,6 +6,7 @@ public class EnemyChaseState : State
 {
     [Header("States")]
     [SerializeField] private AnimationState _chase;
+    [SerializeField] private AnimationState _idle; // Change to attack later
 
     [Header("Components")]
     [SerializeField] private MovementHandler _movement;
@@ -36,6 +37,8 @@ public class EnemyChaseState : State
         }
         else
         {
+            _movement.SetHorizontalMovement(Vector2.zero, 0);
+            machine.Set(_idle, true);
             isComplete = true;
         }
     }
