@@ -33,7 +33,7 @@ public class Enemy : StateMachineCore
 
     private void SelectStates()
     {
-        if (CheckForPlayer())
+        if (CheckForPlayer() || IsChasing())
         {
             _chase.SetTarget(_targetPos);
             machine.Set(_chase);
@@ -42,6 +42,12 @@ public class Enemy : StateMachineCore
         {
             machine.Set(_patrol);
         }
+    }
+
+    public void AlertEnemy(Vector2 _alertedPos)
+    {
+        _chase.SetTarget(_targetPos);
+        machine.Set(_chase);
     }
 
     private bool CheckForPlayer()
@@ -60,6 +66,11 @@ public class Enemy : StateMachineCore
             }
         }
         return false;
+    }
+
+    private bool IsChasing()
+    {
+        return (machine.state == _chase) && (!machine.state.isComplete);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
