@@ -33,7 +33,8 @@ public class Enemy : StateMachineCore
 
     private void SelectStates()
     {
-        if (CheckForPlayer() || IsChasing())
+        if (IsChasing()) return;
+        if (CheckForPlayer())
         {
             _chase.SetTarget(_targetPos);
             machine.Set(_chase);
@@ -46,7 +47,7 @@ public class Enemy : StateMachineCore
 
     public void AlertEnemy(Vector2 _alertedPos)
     {
-        _chase.SetTarget(_targetPos);
+        _chase.SetTarget(_alertedPos);
         machine.Set(_chase);
     }
 

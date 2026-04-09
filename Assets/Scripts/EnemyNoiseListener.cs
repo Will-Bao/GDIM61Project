@@ -32,7 +32,7 @@ public class EnemyNoiseListener : MonoBehaviour
         }
     }
 
-    private void SetSensitivity(float newSensitivity)
+    public void SetSensitivity(float newSensitivity)
     {
         _sensitivity = newSensitivity;
     }

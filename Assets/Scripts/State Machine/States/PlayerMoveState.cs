@@ -13,6 +13,9 @@ public class PlayerMoveState : State
     [Header("Move Stats")]
     [SerializeField] private float _moveSpeed;
 
+    [Header("Noise Settings")]
+    [SerializeField] private int _noiseLevel = 0;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public override void Do()
     {
@@ -29,6 +32,7 @@ public class PlayerMoveState : State
         else
         {
             machine.Set(_walk, true);
+            NoiseManager.Instance.CreateNoise(core.transform.position, _noiseLevel);
         }
     }
 

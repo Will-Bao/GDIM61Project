@@ -408,6 +408,7 @@ MonoBehaviour:
   _inputManager: {fileID: 421417856281247992}
   _movement: {fileID: 7616177804757329783}
   _moveSpeed: 5
+  _noiseLevel: 1
 --- !u!1 &4876146376218864684
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,6 +830,7 @@ MonoBehaviour:
   _inputManager: {fileID: 421417856281247992}
   _movement: {fileID: 7616177804757329783}
   _moveSpeed: 2
+  _noiseLevel: 0
 --- !u!1 &8267058244693228662
 GameObject:
   m_ObjectHideFlags: 0
