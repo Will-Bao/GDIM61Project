@@ -90,6 +90,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animClip: {fileID: 7400000, guid: d050f3c3f1e45cf47bd05d8cfb067d20, type: 2}
+--- !u!1 &2120041103877817411
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7378308986086057619}
+  - component: {fileID: 4049706027336870320}
+  m_Layer: 7
+  m_Name: PlayerDeadState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7378308986086057619
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120041103877817411}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3687580200493310022}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4049706027336870320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120041103877817411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae90839ed9ce05a4b947720b16d6761f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _deadAnim: {fileID: 7400000, guid: f083863efebdddb49a293668a2906c88, type: 2}
+  _movementHandler: {fileID: 7616177804757329783}
 --- !u!1 &2147331527123630340
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,6 +192,7 @@ MonoBehaviour:
   _debug: 1
   _walk: {fileID: 8816080067939995594}
   _crounch: {fileID: 6480722974877584487}
+  _dead: {fileID: 4049706027336870320}
   _inputManager: {fileID: 421417856281247992}
   _spriteRenderer: {fileID: 581149314248266729}
 --- !u!114 &421417856281247992
@@ -560,7 +607,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.0754717, g: 0.041131523, b: 0.025869217, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -813,5 +860,6 @@ Transform:
   m_Children:
   - {fileID: 7598235223181405973}
   - {fileID: 2404993199071637415}
+  - {fileID: 7378308986086057619}
   m_Father: {fileID: 8419185874699318883}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -7,6 +7,7 @@ public class Player : StateMachineCore
     [Header("States")]
     [SerializeField] private PlayerMoveState _walk;
     [SerializeField] private PlayerMoveState _crounch;
+    [SerializeField] private PlayerDeadState _dead;
 
     [Header("Components")]
     [SerializeField] private InputManager _inputManager;
@@ -15,6 +16,8 @@ public class Player : StateMachineCore
     public bool IsHidden { get; private set; }
     public bool IsCrouching { get; private set; }
     public event Action<bool> OnCrouch;
+
+    private bool _isDead;
 
     private void Start()
     {
@@ -36,6 +39,7 @@ public class Player : StateMachineCore
 
     private void SelectStates()
     {
+        if (_isDead) return;
         if (_inputManager.MoveInput.y < 0)
         {
             SetCrouch(true);
@@ -59,5 +63,11 @@ public class Player : StateMachineCore
     public void ToggleHiding(bool hiding)
     {
         IsHidden = hiding;
+    }
+
+    public void SetPlayerDead()
+    {
+        machine.Set(_dead);
+        _isDead = true;
     }
 }

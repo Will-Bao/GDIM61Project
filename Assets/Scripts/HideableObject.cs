@@ -16,7 +16,7 @@ public class HideableObject : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.parent.TryGetComponent(out Player player))
+        if (collision.CompareTag("Player") && collision.transform.parent.TryGetComponent(out Player player))
         {
             _isPlayerInside = true;
             _player = player;
@@ -28,7 +28,7 @@ public class HideableObject : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.transform.parent.TryGetComponent(out Player player))
+        if (collision.CompareTag("Player") && collision.transform.parent.TryGetComponent(out Player player))
         {
             _isPlayerInside = false;
             _player = null;

@@ -32,7 +32,7 @@ public class MovementHandler : MonoBehaviour
     public void SetCanMove(bool canMove)
     {
         _canMove = canMove;
-        if (canMove == false) _velocity = Vector2.zero;
+        if (!canMove) _velocity = Vector2.zero;
     }
 
     private void Start()
