@@ -6,7 +6,9 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     [Header("UI")] // Move to its own UI manager in future
     [SerializeField] private GameObject _winScreen;
-    [SerializeField] private GameObject _loseScreen;    
+    [SerializeField] private GameObject _loseScreen;
+
+    public bool _endCondition;
     private void Awake()
     {
         if (Instance == null)
