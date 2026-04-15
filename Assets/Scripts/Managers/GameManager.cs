@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _winScreen;
     [SerializeField] private GameObject _loseScreen;
 
-    public bool _endCondition;
+    private bool _endCondition;
     private void Awake()
     {
         if (Instance == null)
