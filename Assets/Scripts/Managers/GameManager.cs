@@ -26,12 +26,16 @@ public class GameManager : MonoBehaviour
 
     public void PlayerLose()
     {
+        if (_endCondition) return;
         _loseScreen.SetActive(true);
+        _endCondition = true;
     }
 
     public void PlayerWin()
     {
+        if (_endCondition) return;
         _winScreen.SetActive(true);
+        _endCondition = true;
     }
 
     public void ReloadLevel()
