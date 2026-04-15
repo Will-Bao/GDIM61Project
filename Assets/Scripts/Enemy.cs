@@ -1,4 +1,5 @@
 using System;
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class Enemy : StateMachineCore
@@ -7,11 +8,19 @@ public class Enemy : StateMachineCore
     [SerializeField] private EnemyPatrolState _patrol;
     [SerializeField] private EnemyChaseState _chase;
 
+    [Header("Components")]
+    [SerializeField] private CinemachineImpulseSource _cameraImpulse;
+
     [Header("Player Detection")]
     [SerializeField] private LayerMask _playerLayer;
     [SerializeField] private float _detectionRange;
 
+    [Header("Proximity Shake")]
+    [SerializeField] private float _shakeAmount;
+    [SerializeField] private float _shakeDelay;
+
     private Vector2 _targetPos;
+    private float _shakeTimer = 0f;
 
     private void Start()
     {
@@ -58,6 +67,7 @@ public class Enemy : StateMachineCore
         {
             if (detected.CompareTag("Player"))
             {
+                HandleProximityShake();
                 Player player = detected.GetComponentInParent<Player>();
                 if (!player.IsHidden)
                 {
@@ -84,6 +94,17 @@ public class Enemy : StateMachineCore
                 GameManager.Instance.PlayerLose();
                 player.SetPlayerDead();
             }
+        }
+    }
+
+    private void HandleProximityShake()
+    {
+        if (Mathf.Abs(rb.linearVelocityX) <= 0) return; // return if not moving
+        _shakeTimer += Time.deltaTime;
+        if (_shakeTimer > _shakeDelay)
+        {
+            _shakeTimer = 0f;
+            _cameraImpulse.GenerateImpulse(_shakeAmount);
         }
     }
 }

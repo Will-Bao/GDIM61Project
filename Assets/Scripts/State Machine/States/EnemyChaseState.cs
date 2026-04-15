@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using Unity.Cinemachine;
 
 public class EnemyChaseState : State
 {
@@ -10,12 +11,18 @@ public class EnemyChaseState : State
 
     [Header("Components")]
     [SerializeField] private MovementHandler _movement;
+    [SerializeField] private CinemachineImpulseSource _impulseSource;
 
     [Header("Chase")]
     [SerializeField] private float _chaseSpeed;
     [SerializeField] private float _stoppingDistance;
 
+    [Header("Shake Amount")]
+    [SerializeField] private float _chaseShakeAmount = 0.2f;
+    [SerializeField] private float _shakeDelay = 1.0f;
+
     private Vector2 _targetPos;
+    private float _shakeTimer;
 
     public override void Enter()
     {
@@ -24,6 +31,8 @@ public class EnemyChaseState : State
             Debug.Log("Enemy missing target");
             return;
         }
+
+        _shakeTimer = 0f;
     }
 
     public override void Do()
@@ -33,6 +42,12 @@ public class EnemyChaseState : State
             // Enemy chasing to target
             Vector2 dir = _targetPos - (Vector2)core.transform.position;
             _movement.SetHorizontalMovement(dir, _chaseSpeed);
+            _shakeTimer += Time.deltaTime;
+            if (_shakeTimer >= _shakeDelay)
+            {
+                _shakeTimer = 0;
+                _impulseSource.GenerateImpulse(_chaseShakeAmount);
+            }
             machine.Set(_chase, true);
         }
         else
