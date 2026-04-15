@@ -13,6 +13,9 @@ public class EnemyChaseState : State
     [SerializeField] private MovementHandler _movement;
     [SerializeField] private CinemachineImpulseSource _impulseSource;
 
+    [Header("Audio")]
+    [SerializeField] private AudioClip _footstepAudioClip;
+
     [Header("Chase")]
     [SerializeField] private float _chaseSpeed;
     [SerializeField] private float _stoppingDistance;
@@ -46,6 +49,7 @@ public class EnemyChaseState : State
             if (_shakeTimer >= _shakeDelay)
             {
                 _shakeTimer = 0;
+                SoundFXManager.instance.PlaySoundFXClip(_footstepAudioClip, core.transform, 2f, regulated: false, randPitch: true);
                 _impulseSource.GenerateImpulse(_chaseShakeAmount);
             }
             machine.Set(_chase, true);

@@ -64,6 +64,7 @@ MonoBehaviour:
   _detectionRange: 2
   _shakeAmount: 0.3
   _shakeDelay: 0.2
+  _proximityAudio: {fileID: 8300000, guid: 6e5bc8acef033f547b51fe1c8de12005, type: 3}
 --- !u!114 &3078699258514011903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,6 +460,7 @@ MonoBehaviour:
   _idle: {fileID: 7345007534003546135}
   _movement: {fileID: 997381869543015884}
   _impulseSource: {fileID: 2701656654365847893}
+  _footstepAudioClip: {fileID: 8300000, guid: 6e5bc8acef033f547b51fe1c8de12005, type: 3}
   _chaseSpeed: 6
   _stoppingDistance: 0.1
   _chaseShakeAmount: 0.5

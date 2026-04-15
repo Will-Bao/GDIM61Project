@@ -19,6 +19,9 @@ public class Enemy : StateMachineCore
     [SerializeField] private float _shakeAmount;
     [SerializeField] private float _shakeDelay;
 
+    [Header("Proximity Audio")]
+    [SerializeField] private AudioClip _proximityAudio;
+
     private Vector2 _targetPos;
     private float _shakeTimer = 0f;
 
@@ -105,6 +108,7 @@ public class Enemy : StateMachineCore
         {
             _shakeTimer = 0f;
             _cameraImpulse.GenerateImpulse(_shakeAmount);
+            SoundFXManager.instance.PlaySoundFXClip(_proximityAudio, transform, 2f, regulated: false, randPitch: true);
         }
     }
 }
