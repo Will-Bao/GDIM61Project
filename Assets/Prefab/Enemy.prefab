@@ -57,10 +57,13 @@ MonoBehaviour:
   _debug: 1
   _patrol: {fileID: 1666719856201635191}
   _chase: {fileID: 7105176769428882771}
+  _cameraImpulse: {fileID: 2701656654365847893}
   _playerLayer:
     serializedVersion: 2
     m_Bits: 128
   _detectionRange: 2
+  _shakeAmount: 0.3
+  _shakeDelay: 0.2
 --- !u!114 &3078699258514011903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,7 +116,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &3816199347848413639
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -458,7 +461,8 @@ MonoBehaviour:
   _impulseSource: {fileID: 2701656654365847893}
   _chaseSpeed: 6
   _stoppingDistance: 0.1
-  _chaseShakeAmount: 0.2
+  _chaseShakeAmount: 0.5
+  _shakeDelay: 0.2
 --- !u!1 &7094317618714969454
 GameObject:
   m_ObjectHideFlags: 0
