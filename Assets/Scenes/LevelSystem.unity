@@ -9241,7 +9241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _themeMusic: {fileID: 8300000, guid: 3f9545a8ce7cfc6468fcf458d581805c, type: 3}
-  _themeVolume: 3
+  _themeVolume: 1
   soundFXObject: {fileID: 8737907758959733809, guid: 728aa7b8eac6f7f4b832718b195a3672, type: 3}
   _themeAudioSource: {fileID: 2028478321}
 --- !u!1001 &2089131935
