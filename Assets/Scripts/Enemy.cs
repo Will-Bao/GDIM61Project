@@ -7,6 +7,7 @@ public class Enemy : StateMachineCore
     [Header("States")]
     [SerializeField] private EnemyPatrolState _patrol;
     [SerializeField] private EnemyChaseState _chase;
+    [SerializeField] private EnemyAttackState _attack;
 
     [Header("Components")]
     [SerializeField] private CinemachineImpulseSource _cameraImpulse;
@@ -45,7 +46,7 @@ public class Enemy : StateMachineCore
 
     private void SelectStates()
     {
-        if (IsChasing()) return;
+        if (IsChasing() || IsAttacking()) return;
         if (CheckForPlayer())
         {
             _chase.SetTarget(_targetPos);
@@ -87,6 +88,11 @@ public class Enemy : StateMachineCore
         return (machine.state == _chase) && (!machine.state.isComplete);
     }
 
+    private bool IsAttacking()
+    {
+        return (machine.state == _attack) && (!machine.state.isComplete);
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -94,7 +100,7 @@ public class Enemy : StateMachineCore
             Player player = collision.GetComponentInParent<Player>();
             if (!player.IsHidden)
             {
-                GameManager.Instance.PlayerLose();
+                machine.Set(_attack);
                 player.SetPlayerDead();
             }
         }
