@@ -6,7 +6,7 @@ public class EnemyPatrolState : State
 {
     [Header("States")]
     [SerializeField] private AnimationState _idle;
-    [SerializeField] private AnimationState _walk;
+    [SerializeField] private WalkState _walk;
 
     [Header("Components")]
     [SerializeField] private MovementHandler _movement;

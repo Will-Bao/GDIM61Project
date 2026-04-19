@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _winScreen;
     [SerializeField] private GameObject _loseScreen;
 
+    public bool PlayerSpotted {  get; private set; }
+
     private bool _endCondition;
     private void Awake()
     {
@@ -41,5 +43,11 @@ public class GameManager : MonoBehaviour
     public void ReloadLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void SetPlayerSpotted(bool spotted)
+    {
+        PlayerSpotted = spotted;
+        if (spotted) Debug.Log("Player is spotted");
     }
 }

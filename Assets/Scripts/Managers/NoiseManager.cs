@@ -7,7 +7,7 @@ using UnityEngine;
 public class NoiseManager : MonoBehaviour
 {
     public static NoiseManager Instance;
-    public static Action<Vector3, int> OnNoiseCreated;
+    public static Action<NoiseData> OnNoiseCreated;
     [Header("Noise Settings")]
     [SerializeField] private int _maxNoise = 5;
 
@@ -26,10 +26,10 @@ public class NoiseManager : MonoBehaviour
     /// </summary>
     /// <param name="location"> Where the noise originates from. </param>
     /// <param name="noiseLevel"> Determines far away the noise can be heard. </param>
-    public void CreateNoise(Vector3 location, int noiseLevel)
+    public void CreateNoise(NoiseData data)
     {
-        if (noiseLevel < 0) return;
-        if (noiseLevel > MaxNoise) noiseLevel = MaxNoise;
-        OnNoiseCreated?.Invoke(location, noiseLevel);
+        if (data.Level < 0) return;
+        if (data.Level > MaxNoise) data.Level = MaxNoise;
+        OnNoiseCreated?.Invoke(data);
     }
 }

@@ -58,9 +58,10 @@ public class Enemy : StateMachineCore
         }
     }
 
-    public void AlertEnemy(Vector2 _alertedPos)
+    public void AlertEnemy(NoiseData noise)
     {
-        _chase.SetTarget(_alertedPos);
+        if (noise.Type == NoiseType.Player) GameManager.Instance.SetPlayerSpotted(true);
+        _chase.SetTarget(noise.Location);
         machine.Set(_chase);
     }
 
@@ -76,7 +77,12 @@ public class Enemy : StateMachineCore
                 if (!player.IsHidden)
                 {
                     _targetPos = player.transform.position;
+                    GameManager.Instance.SetPlayerSpotted(true);
                     return true;
+                }
+                else
+                {
+                    GameManager.Instance.SetPlayerSpotted(false);
                 }
             }
         }

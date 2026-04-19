@@ -6,6 +6,7 @@ public class Player : StateMachineCore
 {
     [Header("States")]
     [SerializeField] private PlayerMoveState _walk;
+    [SerializeField] private PlayerMoveState _run;
     [SerializeField] private PlayerMoveState _crounch;
     [SerializeField] private PlayerDeadState _dead;
 
@@ -48,10 +49,17 @@ public class Player : StateMachineCore
         else
         {
             SetCrouch(false);
-            machine.Set(_walk);
+            if (GameManager.Instance.PlayerSpotted)
+            {
+                machine.Set(_run);
+            }
+            else
+            {
+                machine.Set(_walk);
+            }
         }
     }
-    public void SetCrouch(bool crouch)
+    private void SetCrouch(bool crouch)
     {
         if (IsCrouching == crouch) return;
 

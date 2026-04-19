@@ -26,9 +26,9 @@ public class NoiseBarUI : MonoBehaviour
         NoiseManager.OnNoiseCreated -= UpdateNoiseLevel;
     }
 
-    private void UpdateNoiseLevel(Vector3 location, int noiseLevel)
+    private void UpdateNoiseLevel(NoiseData noise)
     {
-        _targetValue = ((float)noiseLevel / NoiseManager.Instance.MaxNoise) * 100;
+        _targetValue = ((float)noise.Level / NoiseManager.Instance.MaxNoise) * 100;
     }
 
     private void Update()

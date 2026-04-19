@@ -6,7 +6,7 @@ using Unity.Cinemachine;
 public class EnemyChaseState : State
 {
     [Header("States")]
-    [SerializeField] private AnimationState _chase;
+    [SerializeField] private WalkState _chase;
     [SerializeField] private AnimationState _idle;
 
     [Header("Components")]

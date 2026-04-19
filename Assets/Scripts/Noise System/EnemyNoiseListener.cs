@@ -21,14 +21,14 @@ public class EnemyNoiseListener : MonoBehaviour
         NoiseManager.OnNoiseCreated -= HandleNoise;
     }
 
-    private void HandleNoise(Vector3 location, int noiseLevel)
+    private void HandleNoise(NoiseData data)
     {
-        float distance = Vector2.Distance(transform.position, location);
-        float effectiveRange = _hearingRange * (noiseLevel * _sensitivity);
+        float distance = Vector2.Distance(transform.position, data.Location);
+        float effectiveRange = _hearingRange * (data.Level * _sensitivity);
 
         if (distance <= effectiveRange)
         {
-            _enemy.AlertEnemy(location);
+            _enemy.AlertEnemy(data);
         }
     }
 

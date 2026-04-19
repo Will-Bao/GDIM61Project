@@ -32,7 +32,7 @@ public class PlayerMoveState : State
         else
         {
             machine.Set(_walk, true);
-            NoiseManager.Instance.CreateNoise(core.transform.position, _noiseLevel);
+            NoiseManager.Instance.CreateNoise(new NoiseData(core.transform.position, _noiseLevel, NoiseType.Player));
         }
     }
 

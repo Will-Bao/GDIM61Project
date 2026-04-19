@@ -227,7 +227,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3201401726980060578}
-  - component: {fileID: 1027268291228485194}
+  - component: {fileID: 6941367716294651816}
   m_Layer: 8
   m_Name: WalkState
   m_TagString: Untagged
@@ -250,7 +250,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2685804563055311683}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1027268291228485194
+--- !u!114 &6941367716294651816
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -259,10 +259,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1249194939166242509}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6492346a9de693479d10c7bbc36a733, type: 3}
+  m_Script: {fileID: 11500000, guid: f9e87ce242308ba4788933972030c4c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animClip: {fileID: 7400000, guid: 26e71999e58bf214188fe4d922cc63df, type: 2}
+  _walkAnim: {fileID: 7400000, guid: 26e71999e58bf214188fe4d922cc63df, type: 2}
+  _maxAnimSpeed: 2
 --- !u!1 &2022349151387663246
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,7 +482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _idle: {fileID: 7345007534003546135}
-  _walk: {fileID: 1027268291228485194}
+  _walk: {fileID: 6941367716294651816}
   _movement: {fileID: 997381869543015884}
   _patrolPoints:
   - {fileID: 0}
@@ -504,7 +505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3def77e4c62c884aa303cb8c9e36722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _chase: {fileID: 1027268291228485194}
+  _chase: {fileID: 6941367716294651816}
   _idle: {fileID: 7345007534003546135}
   _movement: {fileID: 997381869543015884}
   _impulseSource: {fileID: 2701656654365847893}
