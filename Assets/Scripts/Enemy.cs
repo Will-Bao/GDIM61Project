@@ -114,7 +114,7 @@ public class Enemy : StateMachineCore
         {
             _shakeTimer = 0f;
             _cameraImpulse.GenerateImpulse(_shakeAmount);
-            SoundFXManager.instance.PlaySoundFXClip(_proximityAudio, transform, 2f, regulated: false, randPitch: true);
+            SoundFXManager.instance.PlaySoundFXClip(_proximityAudio, transform, 8f, regulated: false, randPitch: true);
         }
     }
 }
