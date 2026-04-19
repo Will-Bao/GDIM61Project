@@ -8,8 +8,8 @@ public class LevelNavigator : MonoBehaviour
     private bool _isNearExit;
     public void EnterNextLevel()
     {
-        // TODO: Add level switching here
-        SetPlayerWin();
+        LevelManager.Instance.NextLevel();
+        // SetPlayerWin();
     }
 
     public void SetPlayerWin()

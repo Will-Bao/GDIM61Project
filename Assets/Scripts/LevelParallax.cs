@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelParallax : MonoBehaviour
@@ -7,7 +8,31 @@ public class LevelParallax : MonoBehaviour
     [SerializeField] private int _sortingOffsetAmount = 2;
     [SerializeField] private float _parallaxAmount = 1f;
 
+    private Dictionary<SpriteRenderer, int> _originalOrders = new();
+    private Dictionary<SpriteRenderer, Color> _originalColors = new();
+
+    private void Awake()
+    {
+        foreach (SpriteRenderer renderer in GetComponentsInChildren<SpriteRenderer>())
+        {
+            _originalOrders[renderer] = renderer.sortingOrder;
+            _originalColors[renderer] = renderer.color;
+        }
+    }
     private void Start()
+    {
+        ApplyParallaxLayer();
+    }
+
+    public void SetParallaxLayer(int layer)
+    {
+        _layerNum = layer;
+        if (layer < 0) gameObject.SetActive(false);
+        else gameObject.SetActive(true);
+        ApplyParallaxLayer();
+    }
+
+    private void ApplyParallaxLayer()
     {
         // Shift z position
         Vector3 currentPos = transform.position;
@@ -17,12 +42,12 @@ public class LevelParallax : MonoBehaviour
         // Adjust sorting layer
         foreach (SpriteRenderer renderer in GetComponentsInChildren<SpriteRenderer>())
         {
-            renderer.sortingOrder -= _layerNum * _sortingOffsetAmount;
+            renderer.sortingOrder = _originalOrders[renderer] - _layerNum * _sortingOffsetAmount;
 
             float darkenFactor = 1f - (_layerNum * 0.1f);
             darkenFactor = Mathf.Clamp01(darkenFactor);
 
-            Color c = renderer.color;
+            Color c = _originalColors[renderer];
             c *= darkenFactor;
             renderer.color = c;
         }
