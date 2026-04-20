@@ -48,6 +48,5 @@ public class GameManager : MonoBehaviour
     public void SetPlayerSpotted(bool spotted)
     {
         PlayerSpotted = spotted;
-        if (spotted) Debug.Log("Player is spotted");
     }
 }
