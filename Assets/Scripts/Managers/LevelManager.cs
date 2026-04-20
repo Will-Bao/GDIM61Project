@@ -7,7 +7,10 @@ public class LevelManager : MonoBehaviour
     public int CurrentLevel { get; private set; }
 
     [Header("Levels")]
-    [SerializeField] private List<LevelParallax> _levels = new();
+    [SerializeField] private List<GameObject> _levels = new();
+
+    private List<LevelParallax> _levelsParallax = new();
+    private List<LevelData> _levelsData = new();
 
     private void Awake()
     {
@@ -19,7 +22,22 @@ public class LevelManager : MonoBehaviour
     }
     private void Start()
     {
+        foreach (var level in _levels)
+        {
+            _levelsParallax.Add(level.GetComponent<LevelParallax>());
+            _levelsData.Add(level.GetComponent<LevelData>());
+        }
         UpdateLevels();
+    }
+
+    public LevelParallax GetLevelParallax(int layerNum)
+    {
+        return _levelsParallax[layerNum];
+    }
+
+    public LevelData GetLevelData(int layerNum)
+    {
+        return _levelsData[layerNum];
     }
 
     public void NextLevel()
@@ -43,7 +61,7 @@ public class LevelManager : MonoBehaviour
         for (int i = 0; i < _levels.Count; i++)
         {
             int layerOffset = i - CurrentLevel;
-            _levels[i].SetParallaxLayer(layerOffset);
+            _levelsParallax[i].SetParallaxLayer(layerOffset);
         }
     }
 }

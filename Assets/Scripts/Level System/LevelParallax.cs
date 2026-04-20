@@ -10,6 +10,8 @@ public class LevelParallax : MonoBehaviour
     [SerializeField] private float _parallaxAmount = 1f;
     [SerializeField] private float _transitionTime = 0.4f;
 
+    public int LayerNum => _layerNum;
+
     private Dictionary<SpriteRenderer, int> _originalOrders = new();
     private Dictionary<SpriteRenderer, Color> _originalColors = new();
     private Coroutine _transitionRoutine;
