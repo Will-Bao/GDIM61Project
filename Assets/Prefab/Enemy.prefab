@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 89009498518834189}
   - component: {fileID: 3816199347848413639}
   - component: {fileID: 2701656654365847893}
+  - component: {fileID: 2487203525676818002}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
@@ -218,6 +219,19 @@ MonoBehaviour:
     DissipationDistance: 100
     PropagationSpeed: 343
   DefaultVelocity: {x: 0, y: -0.2, z: 0}
+--- !u!114 &2487203525676818002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275951191989410876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9301c7c426a60be4c8dcd33858164507, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _startingLayer: 0
 --- !u!1 &1249194939166242509
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,12 +498,8 @@ MonoBehaviour:
   _idle: {fileID: 7345007534003546135}
   _walk: {fileID: 6941367716294651816}
   _movement: {fileID: 997381869543015884}
-  _patrolPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  _levelTracker: {fileID: 2487203525676818002}
+  _patrolPoints: []
   _patrolSpeed: 2
   _stoppingDistance: 0.1
   _idleTime: 2

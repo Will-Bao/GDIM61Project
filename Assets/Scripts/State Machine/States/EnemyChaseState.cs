@@ -26,7 +26,6 @@ public class EnemyChaseState : State
 
     private Vector2 _targetPos;
     private float _shakeTimer;
-    private float _exitTime;
 
     public override void Enter()
     {
@@ -36,7 +35,6 @@ public class EnemyChaseState : State
             return;
         }
 
-        _exitTime = 0f;
         _shakeTimer = 0f;
     }
 

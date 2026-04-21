@@ -6,15 +6,15 @@ public class LevelTracker : MonoBehaviour
     [Header("Layer")]
     [SerializeField] private int _startingLayer = 1;
 
+    public int CurrentLayer { get; private set; }
     private LevelData _levelData;
     private LevelParallax _layer;
-    private int _currentLayer;
 
     void Start()
     {
         _layer = LevelManager.Instance.GetLevelParallax(_startingLayer);
-        if (_layer != null) _currentLayer = _layer.LayerNum;
-        else Debug.LogWarning("Enemy not assigned to a layer");
+        _levelData = LevelManager.Instance.GetLevelData(_startingLayer);
+        CurrentLayer = _layer.LayerNum;
     }
 
     // Update is called once per frame

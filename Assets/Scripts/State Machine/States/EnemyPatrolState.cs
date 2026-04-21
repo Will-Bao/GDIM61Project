@@ -10,9 +10,10 @@ public class EnemyPatrolState : State
 
     [Header("Components")]
     [SerializeField] private MovementHandler _movement;
+    [SerializeField] private LevelTracker _levelTracker;
 
     [Header("Patrol")]
-    [SerializeField] private List<Transform> _patrolPoints;
+    [SerializeField] private List<Transform> _patrolPoints = new();
     [SerializeField] private float _patrolSpeed;
     [SerializeField] private float _stoppingDistance;
 
@@ -24,16 +25,23 @@ public class EnemyPatrolState : State
 
     public override void Enter()
     {
-        if (_patrolPoints == null)
+        _patrolPoints = LevelManager.Instance.GetLevelData(_levelTracker.CurrentLayer).GetPatrolPoints();
+
+        if (_patrolPoints == null || _patrolPoints.Count == 0)
         {
             Debug.Log("Enemy missing patrol points");
             return;
         }
+
+        _patrolIndex %= _patrolPoints.Count;
         _idleTimer = _idleTime;
     }
 
     public override void Do()
     {
+        if (_patrolPoints == null || _patrolPoints.Count == 0) return;
+        if (_patrolIndex >= _patrolPoints.Count) _patrolIndex = 0;
+
         if (_idleTimer > 0)
         {
             // Enemy idling

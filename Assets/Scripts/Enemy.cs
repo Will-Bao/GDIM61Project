@@ -29,7 +29,7 @@ public class Enemy : StateMachineCore
     private void Start()
     {
         SetupInstances();
-        machine.Set(_patrol);
+        machine.Set(_patrol, true);
     }
 
     private void Update()

@@ -19,14 +19,14 @@ public class LevelManager : MonoBehaviour
             Instance = this;
         }
         else Destroy(this);
-    }
-    private void Start()
-    {
         foreach (var level in _levels)
         {
             _levelsParallax.Add(level.GetComponent<LevelParallax>());
             _levelsData.Add(level.GetComponent<LevelData>());
         }
+    }
+    private void Start()
+    {
         UpdateLevels();
     }
 
