@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ public class LevelManager : MonoBehaviour
     [Header("Levels")]
     [SerializeField] private List<GameObject> _levels = new();
 
+    public static Action<int> OnLevelSwitched; // Pass in shift direction (either -1 or 1)
     private List<LevelParallax> _levelsParallax = new();
     private List<LevelData> _levelsData = new();
 
@@ -46,6 +48,7 @@ public class LevelManager : MonoBehaviour
 
         CurrentLevel++;
         UpdateLevels();
+        OnLevelSwitched?.Invoke(CurrentLevel);
     }
 
     public void PreviousLevel()
@@ -54,6 +57,7 @@ public class LevelManager : MonoBehaviour
 
         CurrentLevel--;
         UpdateLevels();
+        OnLevelSwitched?.Invoke(CurrentLevel);
     }
 
     private void UpdateLevels()

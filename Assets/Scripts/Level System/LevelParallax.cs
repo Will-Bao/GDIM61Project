@@ -47,6 +47,8 @@ public class LevelParallax : MonoBehaviour
 
     public void SetObjectLayer(Transform target, int layer)
     {
+        if (layer < 0) return; // handled layer < 0 on LayerTracker
+
         if (_targetRoutine != null) StopCoroutine(_targetRoutine);
 
         _targetRoutine = StartCoroutine(ParallaxTransition(target, layer));

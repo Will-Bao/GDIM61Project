@@ -63,6 +63,7 @@ public class Enemy : StateMachineCore
 
     public void AlertEnemy(NoiseData noise)
     {
+        if (!IsOnSameLayer()) return; // TODO: handle noise detection and movement between layers
         if (noise.Type == NoiseType.Player) GameManager.Instance.SetPlayerSpotted(true);
         _chase.SetTarget(noise.Location);
         machine.Set(_chase);
@@ -73,7 +74,7 @@ public class Enemy : StateMachineCore
         Collider2D[] detectedColliders = Physics2D.OverlapCircleAll(transform.position, _detectionRange, _playerLayer);
         foreach (var detected in detectedColliders)
         {
-            if (detected.CompareTag("Player") && (_levelTracker.CurrentLayer == LevelManager.Instance.CurrentLevel))
+            if (detected.CompareTag("Player") && IsOnSameLayer())
             {
                 HandleProximityShake();
                 Player player = detected.GetComponentInParent<Player>();
@@ -99,7 +100,7 @@ public class Enemy : StateMachineCore
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && (_levelTracker.CurrentLayer == LevelManager.Instance.CurrentLevel))
+        if (collision.CompareTag("Player") && IsOnSameLayer())
         {
             Player player = collision.GetComponentInParent<Player>();
             if (!player.IsHidden)
@@ -120,5 +121,10 @@ public class Enemy : StateMachineCore
             _cameraImpulse.GenerateImpulse(_shakeAmount);
             SoundFXManager.instance.PlaySoundFXClip(_proximityAudio, transform, 8f, regulated: false, randPitch: true);
         }
+    }
+
+    private bool IsOnSameLayer()
+    {
+        return _levelTracker.CurrentLayer == LevelManager.Instance.CurrentLevel;
     }
 }

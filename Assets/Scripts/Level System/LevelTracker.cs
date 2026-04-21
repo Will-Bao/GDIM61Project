@@ -10,7 +10,7 @@ public class LevelTracker : MonoBehaviour
     private LevelData _levelData;
     private LevelParallax _layer;
 
-    void Start()
+    private void Start()
     {
         _layer = LevelManager.Instance.GetLevelParallax(_startingLayer);
         _levelData = LevelManager.Instance.GetLevelData(_startingLayer);
@@ -18,9 +18,21 @@ public class LevelTracker : MonoBehaviour
         _layer.SetObjectLayer(transform, CurrentLayer);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        
+        LevelManager.OnLevelSwitched += HandleGlobalTransition;
+    }
+
+    private void OnDisable()
+    {
+        LevelManager.OnLevelSwitched -= HandleGlobalTransition;
+    }
+
+    private void HandleGlobalTransition(int playerLayer)
+    {
+        int offset = CurrentLayer - playerLayer;
+
+        var layer = LevelManager.Instance.GetLevelParallax(CurrentLayer);
+        layer.SetObjectLayer(transform, offset);
     }
 }
