@@ -11,6 +11,7 @@ public class Enemy : StateMachineCore
 
     [Header("Components")]
     [SerializeField] private CinemachineImpulseSource _cameraImpulse;
+    [SerializeField] private LevelTracker _levelTracker;
 
     [Header("Player Detection")]
     [SerializeField] private LayerMask _playerLayer;
@@ -49,11 +50,13 @@ public class Enemy : StateMachineCore
         if (IsChasing() || IsAttacking()) return;
         if (CheckForPlayer())
         {
+            GameManager.Instance.SetPlayerSpotted(true);
             _chase.SetTarget(_targetPos);
             machine.Set(_chase);
         }
         else
         {
+            GameManager.Instance.SetPlayerSpotted(false);
             machine.Set(_patrol);
         }
     }
@@ -70,19 +73,14 @@ public class Enemy : StateMachineCore
         Collider2D[] detectedColliders = Physics2D.OverlapCircleAll(transform.position, _detectionRange, _playerLayer);
         foreach (var detected in detectedColliders)
         {
-            if (detected.CompareTag("Player"))
+            if (detected.CompareTag("Player") && (_levelTracker.CurrentLayer == LevelManager.Instance.CurrentLevel))
             {
                 HandleProximityShake();
                 Player player = detected.GetComponentInParent<Player>();
                 if (!player.IsHidden)
                 {
                     _targetPos = player.transform.position;
-                    GameManager.Instance.SetPlayerSpotted(true);
                     return true;
-                }
-                else
-                {
-                    GameManager.Instance.SetPlayerSpotted(false);
                 }
             }
         }
@@ -101,7 +99,7 @@ public class Enemy : StateMachineCore
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && (_levelTracker.CurrentLayer == LevelManager.Instance.CurrentLevel))
         {
             Player player = collision.GetComponentInParent<Player>();
             if (!player.IsHidden)

@@ -15,6 +15,7 @@ public class LevelTracker : MonoBehaviour
         _layer = LevelManager.Instance.GetLevelParallax(_startingLayer);
         _levelData = LevelManager.Instance.GetLevelData(_startingLayer);
         CurrentLayer = _layer.LayerNum;
+        _layer.SetObjectLayer(transform, CurrentLayer);
     }
 
     // Update is called once per frame

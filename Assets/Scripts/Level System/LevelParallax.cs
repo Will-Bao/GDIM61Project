@@ -15,6 +15,7 @@ public class LevelParallax : MonoBehaviour
     private Dictionary<SpriteRenderer, int> _originalOrders = new();
     private Dictionary<SpriteRenderer, Color> _originalColors = new();
     private Coroutine _transitionRoutine;
+    private Coroutine _targetRoutine;
 
     private void Awake()
     {
@@ -41,19 +42,25 @@ public class LevelParallax : MonoBehaviour
 
         if (_transitionRoutine != null) StopCoroutine(_transitionRoutine);
 
-        _transitionRoutine = StartCoroutine(LevelTransition());
+        _transitionRoutine = StartCoroutine(ParallaxTransition(transform, layer));
     }
 
-    private IEnumerator LevelTransition()
+    public void SetObjectLayer(Transform target, int layer)
+    {
+        if (_targetRoutine != null) StopCoroutine(_targetRoutine);
+
+        _targetRoutine = StartCoroutine(ParallaxTransition(target, layer));
+    }
+
+    private IEnumerator ParallaxTransition(Transform target, int layer)
     {
         float elapsed = 0f;
 
-        Vector3 startPos = transform.position;
-
-        float targetZ = _layerNum * _parallaxAmount;
+        Vector3 startPos = target.position;
+        float targetZ = layer * _parallaxAmount;
         Vector3 targetPos = new Vector3(startPos.x, startPos.y, targetZ);
 
-        var renderers = GetComponentsInChildren<SpriteRenderer>();
+        var renderers = target.GetComponentsInChildren<SpriteRenderer>();
 
         Dictionary<SpriteRenderer, int> startOrders = new();
         Dictionary<SpriteRenderer, int> targetOrders = new();
@@ -63,29 +70,29 @@ public class LevelParallax : MonoBehaviour
         // Transition
         foreach (var r in renderers)
         {
+            if (!_originalOrders.ContainsKey(r)) _originalOrders[r] = r.sortingOrder;
+
+            if (!_originalColors.ContainsKey(r)) _originalColors[r] = r.color;
+
             startOrders[r] = r.sortingOrder;
-            targetOrders[r] = _originalOrders[r] - _layerNum * _sortingOffsetAmount;
+            targetOrders[r] = _originalOrders[r] - layer * _sortingOffsetAmount;
 
             startColors[r] = r.color;
 
-            float darkenFactor = Mathf.Clamp01(1f - (_layerNum * 0.1f));
+            float darkenFactor = Mathf.Clamp01(1f - (layer * 0.1f));
             Color baseColor = _originalColors[r];
-            targetColors[r] = new Color(
-                baseColor.r * darkenFactor,
-                baseColor.g * darkenFactor,
-                baseColor.b * darkenFactor,
-                baseColor.a
-            );
+
+            targetColors[r] = new Color(baseColor.r * darkenFactor, baseColor.g * darkenFactor,
+                                        baseColor.b * darkenFactor, baseColor.a);
         }
 
         while (elapsed < _transitionTime)
         {
             elapsed += Time.deltaTime;
-            float t = elapsed / _transitionTime;
+            float t = Mathf.SmoothStep(0, 1, elapsed / _transitionTime);
 
-            t = Mathf.SmoothStep(0, 1, t);
+            target.position = Vector3.Lerp(startPos, targetPos, t);
 
-            transform.position = Vector3.Lerp(startPos, targetPos, t);
             foreach (var r in renderers)
             {
                 r.sortingOrder = Mathf.RoundToInt(Mathf.Lerp(startOrders[r], targetOrders[r], t));
@@ -96,7 +103,7 @@ public class LevelParallax : MonoBehaviour
         }
 
         // Final
-        transform.position = targetPos;
+        target.position = targetPos;
 
         foreach (var r in renderers)
         {
