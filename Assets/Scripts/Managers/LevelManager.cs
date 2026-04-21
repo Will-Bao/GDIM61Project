@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,7 +11,11 @@ public class LevelManager : MonoBehaviour
     [Header("Levels")]
     [SerializeField] private List<GameObject> _levels = new();
 
-    public static Action<int> OnLevelSwitched; // Pass in shift direction (either -1 or 1)
+    [Header("Transition")]
+    [SerializeField] private float _cooldown = 0.5f;
+
+    public static Action<int> OnLevelSwitched;
+    public bool IsTransitioning { get; private set; }
     private List<LevelParallax> _levelsParallax = new();
     private List<LevelData> _levelsData = new();
 
@@ -44,18 +49,22 @@ public class LevelManager : MonoBehaviour
 
     public void NextLevel()
     {
-        if (CurrentLevel >= _levels.Count - 1) return;
+        if (CurrentLevel >= _levels.Count - 1 || IsTransitioning) return;
+        StartCoroutine(Cooldown());
 
         CurrentLevel++;
+        Debug.Log($"Current Lvl: {CurrentLevel}");
         UpdateLevels();
         OnLevelSwitched?.Invoke(CurrentLevel);
     }
 
     public void PreviousLevel()
     {
-        if (CurrentLevel <= 0) return;
+        if (CurrentLevel <= 0 || IsTransitioning) return;
+        StartCoroutine(Cooldown());
 
         CurrentLevel--;
+        Debug.Log($"Current Lvl: {CurrentLevel}");
         UpdateLevels();
         OnLevelSwitched?.Invoke(CurrentLevel);
     }
@@ -67,5 +76,12 @@ public class LevelManager : MonoBehaviour
             int layerOffset = i - CurrentLevel;
             _levelsParallax[i].SetParallaxLayer(layerOffset);
         }
+    }
+
+    private IEnumerator Cooldown()
+    {
+        IsTransitioning = true;
+        yield return new WaitForSeconds(_cooldown);
+        IsTransitioning = false;
     }
 }

@@ -6,11 +6,7 @@ public class LevelNavigator : MonoBehaviour
     [SerializeField] private InputManager _input;
 
     private bool _isNearExit;
-    public void EnterNextLevel()
-    {
-        LevelManager.Instance.NextLevel();
-        // SetPlayerWin();
-    }
+    private bool _isNearEntrance;
 
     public void SetPlayerWin()
     {
@@ -19,24 +15,50 @@ public class LevelNavigator : MonoBehaviour
 
     private void Update()
     {
-        if (_isNearExit && _input.MoveInput.y > 0 )
+        if (_isNearExit && _input.MoveInput.y > 0)
         {
-            EnterNextLevel();
+            LevelManager.Instance.NextLevel();
+            _isNearExit = false;
+            _isNearEntrance = true;
+        }
+        else if (_isNearEntrance && _input.MoveInput.y < 0)
+        {
+            LevelManager.Instance.PreviousLevel();
+            _isNearEntrance = false;
+            _isNearExit = true;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (!collision.TryGetComponent(out LevelMarker marker) ||
+            marker.CurrentLayer != LevelManager.Instance.CurrentLevel) return; // Check for same layer
+
         if (collision.CompareTag("Exit"))
         {
             _isNearExit = true;
+            Debug.Log($"Near Exit: {_isNearExit}; Layer {marker.CurrentLayer}");
+        }
+        if (collision.CompareTag("Entrance"))
+        {
+            _isNearEntrance = true;
+            Debug.Log($"Near Entrance: {_isNearEntrance}; Layer {marker.CurrentLayer}");
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if (!collision.TryGetComponent(out LevelMarker marker) ||
+            marker.CurrentLayer != LevelManager.Instance.CurrentLevel) return; // Check for same layer
+
         if (collision.CompareTag("Exit"))
         {
             _isNearExit = false;
+            Debug.Log($"Near Exit: {_isNearExit}");
+        }
+        if (collision.CompareTag("Entrance"))
+        {
+            _isNearEntrance = false;
+            Debug.Log($"Near Entrance: {_isNearEntrance}");
         }
     }
 }

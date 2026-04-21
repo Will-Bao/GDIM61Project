@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Exit
+  - Entrance
   layers:
   - Default
   - TransparentFX
