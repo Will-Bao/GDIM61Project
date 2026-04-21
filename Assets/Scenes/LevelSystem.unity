@@ -11631,34 +11631,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 3963340567957139260, guid: 56a8c67d15c2d77419f6e49d1d77af2a, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090647802316635438, guid: 56a8c67d15c2d77419f6e49d1d77af2a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6205357416927653841, guid: 56a8c67d15c2d77419f6e49d1d77af2a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6205357416927653841, guid: 56a8c67d15c2d77419f6e49d1d77af2a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6282717576136296004, guid: 56a8c67d15c2d77419f6e49d1d77af2a, type: 3}
-      propertyPath: field of view
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 7057827289919905746, guid: 56a8c67d15c2d77419f6e49d1d77af2a, type: 3}
-      propertyPath: _maxDarkness
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7057827289919905746, guid: 56a8c67d15c2d77419f6e49d1d77af2a, type: 3}
-      propertyPath: _minDarkness
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 8419185874699318883, guid: 56a8c67d15c2d77419f6e49d1d77af2a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

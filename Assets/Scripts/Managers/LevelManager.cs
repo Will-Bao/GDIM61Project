@@ -53,7 +53,6 @@ public class LevelManager : MonoBehaviour
         StartCoroutine(Cooldown());
 
         CurrentLevel++;
-        Debug.Log($"Current Lvl: {CurrentLevel}");
         UpdateLevels();
         OnLevelSwitched?.Invoke(CurrentLevel);
     }
@@ -64,7 +63,6 @@ public class LevelManager : MonoBehaviour
         StartCoroutine(Cooldown());
 
         CurrentLevel--;
-        Debug.Log($"Current Lvl: {CurrentLevel}");
         UpdateLevels();
         OnLevelSwitched?.Invoke(CurrentLevel);
     }

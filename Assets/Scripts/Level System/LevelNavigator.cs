@@ -36,12 +36,10 @@ public class LevelNavigator : MonoBehaviour
         if (collision.CompareTag("Exit"))
         {
             _isNearExit = true;
-            Debug.Log($"Near Exit: {_isNearExit}; Layer {marker.CurrentLayer}");
         }
         if (collision.CompareTag("Entrance"))
         {
             _isNearEntrance = true;
-            Debug.Log($"Near Entrance: {_isNearEntrance}; Layer {marker.CurrentLayer}");
         }
     }
 
@@ -53,12 +51,10 @@ public class LevelNavigator : MonoBehaviour
         if (collision.CompareTag("Exit"))
         {
             _isNearExit = false;
-            Debug.Log($"Near Exit: {_isNearExit}");
         }
         if (collision.CompareTag("Entrance"))
         {
             _isNearEntrance = false;
-            Debug.Log($"Near Entrance: {_isNearEntrance}");
         }
     }
 }

@@ -35,6 +35,7 @@ public class Enemy : StateMachineCore
 
     private void Update()
     {
+        ToggleVisibility(_levelTracker.CurrentLayer >= LevelManager.Instance.CurrentLevel);
         SetFacingDirection();
         SelectStates();
         machine.state.DoBranch();
@@ -67,6 +68,11 @@ public class Enemy : StateMachineCore
         if (noise.Type == NoiseType.Player) GameManager.Instance.SetPlayerSpotted(true);
         _chase.SetTarget(noise.Location);
         machine.Set(_chase);
+    }
+
+    public void ToggleVisibility(bool visible)
+    {
+        anim.GetComponent<SpriteRenderer>().enabled = visible;
     }
 
     private bool CheckForPlayer()

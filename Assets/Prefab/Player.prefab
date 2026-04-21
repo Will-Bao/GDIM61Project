@@ -556,8 +556,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _initialDarkness: 100
-  _minDarkness: 10
-  _maxDarkness: 15
+  _minDarkness: 5
+  _maxDarkness: 10
   _lerpDuration: 1
   _renderer: {fileID: 3963340567957139260}
 --- !u!1 &4205440191959131747
