@@ -37,7 +37,7 @@ public class LevelTracker : MonoBehaviour
         int offset = CurrentLayer - playerLayer;
 
         var layer = LevelManager.Instance.GetLevelParallax(CurrentLayer);
-        layer.SetObjectLayer(transform, offset, _originalOrders, _originalColors);
+        if (layer.gameObject.activeSelf) layer.SetObjectLayer(transform, offset, _originalOrders, _originalColors);
     }
 
     public void TransitionNewLayer(int shiftAmount)
@@ -50,7 +50,7 @@ public class LevelTracker : MonoBehaviour
         int offset = CurrentLayer - playerLayer;
 
         var layer = LevelManager.Instance.GetLevelParallax(CurrentLayer);
-        layer.SetObjectLayer(transform, CurrentLayer, _originalOrders, _originalColors);
+        if (layer.gameObject.activeSelf) layer.SetObjectLayer(transform, offset, _originalOrders, _originalColors);
     }
 
     private void CacheOriginals(SpriteRenderer[] renderers)
