@@ -17,7 +17,7 @@ public class LevelParallax : MonoBehaviour
     private Coroutine _transitionRoutine;
     private Coroutine _targetRoutine;
 
-    private float _darkenPercentage = 0.3f;
+    private float _darkenPercentage = 0.7f;
 
     private void Awake()
     {

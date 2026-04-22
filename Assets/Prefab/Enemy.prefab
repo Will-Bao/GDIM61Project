@@ -57,7 +57,7 @@ MonoBehaviour:
   anim: {fileID: 2856238944268960113}
   _debug: 1
   _patrol: {fileID: 1666719856201635191}
-  _chase: {fileID: 7105176769428882771}
+  _chase: {fileID: 2890295225613280576}
   _levelNav: {fileID: 2454665890638603380}
   _attack: {fileID: 5603396350037782162}
   _cameraImpulse: {fileID: 2701656654365847893}
@@ -282,6 +282,59 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _walkAnim: {fileID: 7400000, guid: 26e71999e58bf214188fe4d922cc63df, type: 2}
   _maxAnimSpeed: 2
+--- !u!1 &1792789963811474614
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5025414700618223105}
+  - component: {fileID: 5563158954135523700}
+  m_Layer: 8
+  m_Name: LayerChaseState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5025414700618223105
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792789963811474614}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2685804563055311683}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5563158954135523700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792789963811474614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3def77e4c62c884aa303cb8c9e36722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _chase: {fileID: 6941367716294651816}
+  _idle: {fileID: 7345007534003546135}
+  _movement: {fileID: 997381869543015884}
+  _impulseSource: {fileID: 2701656654365847893}
+  _footstepAudioClip: {fileID: 8300000, guid: 6e5bc8acef033f547b51fe1c8de12005, type: 3}
+  _chaseSpeed: 15
+  _stoppingDistance: 0.1
+  _chaseShakeAmount: 0.5
+  _shakeDelay: 0.2
 --- !u!1 &2022349151387663246
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,6 +380,59 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animClip: {fileID: 7400000, guid: 115223022cc7fe245976e0676ae80b8f, type: 2}
+--- !u!1 &3158242542401249092
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9126803126711641765}
+  - component: {fileID: 2890295225613280576}
+  m_Layer: 8
+  m_Name: BaseChaseState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9126803126711641765
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3158242542401249092}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2685804563055311683}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2890295225613280576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3158242542401249092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3def77e4c62c884aa303cb8c9e36722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _chase: {fileID: 6941367716294651816}
+  _idle: {fileID: 7345007534003546135}
+  _movement: {fileID: 997381869543015884}
+  _impulseSource: {fileID: 2701656654365847893}
+  _footstepAudioClip: {fileID: 8300000, guid: 6e5bc8acef033f547b51fe1c8de12005, type: 3}
+  _chaseSpeed: 6
+  _stoppingDistance: 0.1
+  _chaseShakeAmount: 0.5
+  _shakeDelay: 0.2
 --- !u!1 &4205127943394644089
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,7 +567,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2685804563055311683}
   - component: {fileID: 1666719856201635191}
-  - component: {fileID: 7105176769428882771}
   - component: {fileID: 2454665890638603380}
   m_Layer: 8
   m_Name: Behaviors
@@ -486,6 +591,8 @@ Transform:
   - {fileID: 3147557705451460405}
   - {fileID: 3201401726980060578}
   - {fileID: 4899142851241792802}
+  - {fileID: 9126803126711641765}
+  - {fileID: 5025414700618223105}
   m_Father: {fileID: 1779755344798053942}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1666719856201635191
@@ -508,27 +615,6 @@ MonoBehaviour:
   _patrolSpeed: 2
   _stoppingDistance: 0.1
   _idleTime: 2
---- !u!114 &7105176769428882771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5746510141130435623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3def77e4c62c884aa303cb8c9e36722, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _chase: {fileID: 6941367716294651816}
-  _idle: {fileID: 7345007534003546135}
-  _movement: {fileID: 997381869543015884}
-  _impulseSource: {fileID: 2701656654365847893}
-  _footstepAudioClip: {fileID: 8300000, guid: 6e5bc8acef033f547b51fe1c8de12005, type: 3}
-  _chaseSpeed: 6
-  _stoppingDistance: 0.1
-  _chaseShakeAmount: 0.5
-  _shakeDelay: 0.2
 --- !u!114 &2454665890638603380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -541,7 +627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f56918b5e710864182e110e5e5a83fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _chase: {fileID: 7105176769428882771}
+  _chase: {fileID: 5563158954135523700}
   _idle: {fileID: 7345007534003546135}
   _tracker: {fileID: 2487203525676818002}
   _stoppingDistance: 0.1
