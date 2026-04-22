@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
 
     [Header("Levels")]
     [SerializeField] private List<GameObject> _levels = new();
+    [SerializeField] private int _lastLevel;
 
     [Header("Transition")]
     [SerializeField] private float _cooldown = 0.5f;
@@ -50,6 +51,11 @@ public class LevelManager : MonoBehaviour
     public void NextLevel()
     {
         if (CurrentLevel >= _levels.Count - 1 || IsTransitioning) return;
+        if (CurrentLevel == _lastLevel)
+        {
+            GameManager.Instance.PlayerWin();
+            return;
+        }
         StartCoroutine(Cooldown());
 
         CurrentLevel++;

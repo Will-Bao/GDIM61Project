@@ -17,6 +17,8 @@ public class LevelParallax : MonoBehaviour
     private Coroutine _transitionRoutine;
     private Coroutine _targetRoutine;
 
+    private float _darkenPercentage = 0.3f;
+
     private void Awake()
     {
         foreach (SpriteRenderer renderer in GetComponentsInChildren<SpriteRenderer>())
@@ -82,7 +84,7 @@ public class LevelParallax : MonoBehaviour
 
             startColors[r] = r.color;
 
-            float darkenFactor = Mathf.Clamp01(1f - (layer * 0.1f));
+            float darkenFactor = Mathf.Clamp01(1f - (layer * _darkenPercentage));
             Color baseColor = colors[r];
 
             targetColors[r] = new Color(baseColor.r * darkenFactor, baseColor.g * darkenFactor,
@@ -127,7 +129,7 @@ public class LevelParallax : MonoBehaviour
         {
             renderer.sortingOrder = _originalOrders[renderer] - _layerNum * _sortingOffsetAmount;
 
-            float darkenFactor = 1f - (_layerNum * 0.1f);
+            float darkenFactor = 1f - (_layerNum * _darkenPercentage);
             darkenFactor = Mathf.Clamp01(darkenFactor);
 
             Color baseColor = _originalColors[renderer];

@@ -4824,7 +4824,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2487203525676818002, guid: 8e57c843435ba9b478fe235ed218b616, type: 3}
       propertyPath: _startingLayer
-      value: 1
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3078699258514011903, guid: 8e57c843435ba9b478fe235ed218b616, type: 3}
+      propertyPath: _layerFalloff
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8187,6 +8191,8 @@ MonoBehaviour:
   - {fileID: 1881461181}
   - {fileID: 1529864621}
   - {fileID: 34550597}
+  - {fileID: 2135748653}
+  _lastLevel: 4
   _cooldown: 0.5
 --- !u!1 &1529864621
 GameObject:
