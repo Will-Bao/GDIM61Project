@@ -3,7 +3,10 @@ using UnityEngine.InputSystem;
 
 public class LevelNavigator : MonoBehaviour
 {
+    [Header("Components")]
     [SerializeField] private InputManager _input;
+    [SerializeField] private GameObject _nextIndicator;
+    [SerializeField] private GameObject _backIndicator;
 
     private bool _isNearExit;
     private bool _isNearEntrance;
@@ -15,6 +18,7 @@ public class LevelNavigator : MonoBehaviour
 
     private void Update()
     {
+        UpdateIndicators();
         if (_isNearExit && _input.MoveInput.y > 0)
         {
             LevelManager.Instance.NextLevel();
@@ -28,6 +32,13 @@ public class LevelNavigator : MonoBehaviour
             _isNearExit = true;
         }
     }
+
+    private void UpdateIndicators()
+    {
+        _nextIndicator.SetActive(_isNearExit);
+        _backIndicator.SetActive(_isNearEntrance);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.TryGetComponent(out LevelMarker marker) ||
