@@ -42,19 +42,20 @@ public class LevelParallax : MonoBehaviour
 
         if (_transitionRoutine != null) StopCoroutine(_transitionRoutine);
 
-        _transitionRoutine = StartCoroutine(ParallaxTransition(transform, layer));
+        _transitionRoutine = StartCoroutine(ParallaxTransition(transform, layer, _originalOrders, _originalColors));
     }
 
-    public void SetObjectLayer(Transform target, int layer)
+    public void SetObjectLayer(Transform target, int layer, Dictionary<SpriteRenderer, int> orders,
+                               Dictionary<SpriteRenderer, Color> colors)
     {
         if (layer < 0) return; // handled layer < 0 on LayerTracker
-
         if (_targetRoutine != null) StopCoroutine(_targetRoutine);
 
-        _targetRoutine = StartCoroutine(ParallaxTransition(target, layer));
+        _targetRoutine = StartCoroutine(ParallaxTransition(target, layer, orders, colors));
     }
 
-    private IEnumerator ParallaxTransition(Transform target, int layer)
+    private IEnumerator ParallaxTransition(Transform target, int layer, Dictionary<SpriteRenderer, int> orders,
+                                           Dictionary<SpriteRenderer, Color> colors)
     {
         float elapsed = 0f;
 
@@ -72,17 +73,17 @@ public class LevelParallax : MonoBehaviour
         // Transition
         foreach (var r in renderers)
         {
-            if (!_originalOrders.ContainsKey(r)) _originalOrders[r] = r.sortingOrder;
+            if (!orders.ContainsKey(r)) orders[r] = r.sortingOrder;
 
-            if (!_originalColors.ContainsKey(r)) _originalColors[r] = r.color;
+            if (!colors.ContainsKey(r)) colors[r] = r.color;
 
             startOrders[r] = r.sortingOrder;
-            targetOrders[r] = _originalOrders[r] - layer * _sortingOffsetAmount;
+            targetOrders[r] = orders[r] - layer * _sortingOffsetAmount;
 
             startColors[r] = r.color;
 
             float darkenFactor = Mathf.Clamp01(1f - (layer * 0.1f));
-            Color baseColor = _originalColors[r];
+            Color baseColor = colors[r];
 
             targetColors[r] = new Color(baseColor.r * darkenFactor, baseColor.g * darkenFactor,
                                         baseColor.b * darkenFactor, baseColor.a);

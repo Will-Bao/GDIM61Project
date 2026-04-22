@@ -397,7 +397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95f2217f4aef7e241af2d8bae6ef3f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _start: {fileID: 0}
+  _start: {fileID: 666278028}
   _exit: {fileID: 0}
   _patrolPoints:
   - {fileID: 1845238717}
@@ -3175,7 +3175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _start: {fileID: 0}
-  _exit: {fileID: 0}
+  _exit: {fileID: 336884578}
   _patrolPoints:
   - {fileID: 923761188}
   - {fileID: 941257804}
@@ -5030,7 +5030,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2487203525676818002, guid: 8e57c843435ba9b478fe235ed218b616, type: 3}
       propertyPath: _startingLayer
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7137,8 +7137,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95f2217f4aef7e241af2d8bae6ef3f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _start: {fileID: 0}
-  _exit: {fileID: 0}
+  _start: {fileID: 470378441}
+  _exit: {fileID: 1531305067}
   _patrolPoints:
   - {fileID: 788726809}
   - {fileID: 1194571030}
@@ -8594,8 +8594,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95f2217f4aef7e241af2d8bae6ef3f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _start: {fileID: 0}
-  _exit: {fileID: 0}
+  _start: {fileID: 1645523954}
+  _exit: {fileID: 1188828790}
   _patrolPoints:
   - {fileID: 1826220728}
   - {fileID: 42644660}
@@ -10128,8 +10128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95f2217f4aef7e241af2d8bae6ef3f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _start: {fileID: 0}
-  _exit: {fileID: 0}
+  _start: {fileID: 2097938945}
+  _exit: {fileID: 1861070231}
   _patrolPoints:
   - {fileID: 881196808}
   - {fileID: 909671328}

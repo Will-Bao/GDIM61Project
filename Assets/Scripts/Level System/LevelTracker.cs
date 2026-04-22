@@ -1,5 +1,5 @@
+using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class LevelTracker : MonoBehaviour
 {
@@ -7,15 +7,19 @@ public class LevelTracker : MonoBehaviour
     [SerializeField] private int _startingLayer = 1;
 
     public int CurrentLayer { get; private set; }
-    private LevelData _levelData;
+    public LevelData Data { get; private set; }
     private LevelParallax _layer;
+
+    private Dictionary<SpriteRenderer, int> _originalOrders = new();
+    private Dictionary<SpriteRenderer, Color> _originalColors = new();
 
     private void Start()
     {
         _layer = LevelManager.Instance.GetLevelParallax(_startingLayer);
-        _levelData = LevelManager.Instance.GetLevelData(_startingLayer);
+        Data = LevelManager.Instance.GetLevelData(_startingLayer);
         CurrentLayer = _layer.LayerNum;
-        _layer.SetObjectLayer(transform, CurrentLayer);
+        CacheOriginals(GetComponentsInChildren<SpriteRenderer>());
+        _layer.SetObjectLayer(transform, CurrentLayer, _originalOrders, _originalColors);
     }
 
     private void OnEnable()
@@ -33,6 +37,31 @@ public class LevelTracker : MonoBehaviour
         int offset = CurrentLayer - playerLayer;
 
         var layer = LevelManager.Instance.GetLevelParallax(CurrentLayer);
-        layer.SetObjectLayer(transform, offset);
+        layer.SetObjectLayer(transform, offset, _originalOrders, _originalColors);
+    }
+
+    public void TransitionNewLayer(int shiftAmount)
+    {
+        CurrentLayer += shiftAmount;
+
+        Data = LevelManager.Instance.GetLevelData(CurrentLayer);
+
+        int playerLayer = LevelManager.Instance.CurrentLevel;
+        int offset = CurrentLayer - playerLayer;
+
+        var layer = LevelManager.Instance.GetLevelParallax(CurrentLayer);
+        layer.SetObjectLayer(transform, CurrentLayer, _originalOrders, _originalColors);
+    }
+
+    private void CacheOriginals(SpriteRenderer[] renderers)
+    {
+        foreach (var r in renderers)
+        {
+            if (!_originalOrders.ContainsKey(r))
+                _originalOrders[r] = r.sortingOrder;
+
+            if (!_originalColors.ContainsKey(r))
+                _originalColors[r] = r.color;
+        }
     }
 }

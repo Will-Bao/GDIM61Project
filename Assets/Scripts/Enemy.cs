@@ -7,6 +7,7 @@ public class Enemy : StateMachineCore
     [Header("States")]
     [SerializeField] private EnemyPatrolState _patrol;
     [SerializeField] private EnemyChaseState _chase;
+    [SerializeField] private LevelNavigationState _levelNav;
     [SerializeField] private EnemyAttackState _attack;
 
     [Header("Components")]
@@ -64,10 +65,17 @@ public class Enemy : StateMachineCore
 
     public void AlertEnemy(NoiseData noise)
     {
-        if (!IsOnSameLayer()) return; // TODO: handle noise detection and movement between layers
         if (noise.Type == NoiseType.Player) GameManager.Instance.SetPlayerSpotted(true);
-        _chase.SetTarget(noise.Location);
-        machine.Set(_chase);
+        if (IsOnSameLayer())
+        {
+            _chase.SetTarget(noise.Location);
+            machine.Set(_chase);
+        }
+        else
+        {
+            _levelNav.SetTargetLayer(noise.Layer, noise.Location);
+            machine.Set(_levelNav);
+        }
     }
 
     public void ToggleVisibility(bool visible)
@@ -96,7 +104,7 @@ public class Enemy : StateMachineCore
 
     private bool IsChasing()
     {
-        return (machine.state == _chase) && (!machine.state.isComplete);
+        return (machine.state == _chase || machine.state == _levelNav) && (!machine.state.isComplete);
     }
 
     private bool IsAttacking()

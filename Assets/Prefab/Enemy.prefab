@@ -58,6 +58,7 @@ MonoBehaviour:
   _debug: 1
   _patrol: {fileID: 1666719856201635191}
   _chase: {fileID: 7105176769428882771}
+  _levelNav: {fileID: 2454665890638603380}
   _attack: {fileID: 5603396350037782162}
   _cameraImpulse: {fileID: 2701656654365847893}
   _levelTracker: {fileID: 2487203525676818002}
@@ -459,6 +460,7 @@ GameObject:
   - component: {fileID: 2685804563055311683}
   - component: {fileID: 1666719856201635191}
   - component: {fileID: 7105176769428882771}
+  - component: {fileID: 2454665890638603380}
   m_Layer: 8
   m_Name: Behaviors
   m_TagString: Untagged
@@ -525,6 +527,22 @@ MonoBehaviour:
   _stoppingDistance: 0.1
   _chaseShakeAmount: 0.5
   _shakeDelay: 0.2
+--- !u!114 &2454665890638603380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5746510141130435623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f56918b5e710864182e110e5e5a83fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _chase: {fileID: 7105176769428882771}
+  _idle: {fileID: 7345007534003546135}
+  _tracker: {fileID: 2487203525676818002}
+  _stoppingDistance: 0.1
 --- !u!1 &7094317618714969454
 GameObject:
   m_ObjectHideFlags: 0
