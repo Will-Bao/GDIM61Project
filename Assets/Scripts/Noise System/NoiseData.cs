@@ -1,5 +1,5 @@
 using UnityEngine;
-using static TreeEditor.TreeEditorHelper;
+// using static TreeEditor.TreeEditorHelper;
 
 public enum NoiseType
 {
