@@ -27,6 +27,13 @@ public class EnemyNoiseListener : MonoBehaviour
 
     private void HandleNoise(NoiseData data)
     {
+        if (data.Level >= NoiseManager.Instance.MaxNoise)
+        {
+            // Global alert
+            _enemy.AlertEnemy(data);
+            return;
+        }
+
         int layerDiff = Mathf.Abs(_levelTracker.CurrentLayer - data.Layer);
         float layerMultiplier = Mathf.Pow(_layerFalloff, layerDiff);
 
