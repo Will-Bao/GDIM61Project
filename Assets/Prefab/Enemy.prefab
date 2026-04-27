@@ -83,7 +83,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hearingRange: 5
   _sensitivity: 1
-  _layerFalloff: 0.5
+  _layerFalloff: 0.3
   _levelTracker: {fileID: 2487203525676818002}
 --- !u!114 &2487203525676818002
 MonoBehaviour:
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9301c7c426a60be4c8dcd33858164507, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startingLayer: 1
+  _startingLayer: 2
 --- !u!114 &997381869543015884
 MonoBehaviour:
   m_ObjectHideFlags: 0
