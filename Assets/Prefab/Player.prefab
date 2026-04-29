@@ -272,6 +272,7 @@ Transform:
   - {fileID: 3687580200493310022}
   - {fileID: 5996759136798219860}
   - {fileID: 6396287742828765557}
+  - {fileID: 3639312468184695870}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4905153206443257861
@@ -558,6 +559,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animClip: {fileID: 7400000, guid: 546dbc6b9738d73489e8a9b42987a48a, type: 2}
+--- !u!1 &4060187668161549164
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3639312468184695870}
+  m_Layer: 7
+  m_Name: SoundUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3639312468184695870
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4060187668161549164}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8419185874699318883}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4090647802316635438
 GameObject:
   m_ObjectHideFlags: 0
