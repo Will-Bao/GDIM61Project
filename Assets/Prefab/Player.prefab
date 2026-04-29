@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae90839ed9ce05a4b947720b16d6761f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _deadAnim: {fileID: 7400000, guid: f083863efebdddb49a293668a2906c88, type: 2}
+  _deadAnim: {fileID: 7400000, guid: 6ec10e83de012f44f8bf5e36761b2812, type: 2}
   _movementHandler: {fileID: 7616177804757329783}
 --- !u!1 &2147331527123630340
 GameObject:
