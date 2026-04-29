@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        else Destroy(this);
+        else Destroy(gameObject);
     }
 
     public void PlayerLose()
