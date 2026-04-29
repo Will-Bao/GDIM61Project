@@ -9,6 +9,7 @@ public class Enemy : StateMachineCore
     [SerializeField] private EnemyChaseState _chase;
     [SerializeField] private LevelNavigationState _levelNav;
     [SerializeField] private EnemyAttackState _attack;
+    [SerializeField] private AnimationState _idle;
 
     [Header("Components")]
     [SerializeField] private CinemachineImpulseSource _cameraImpulse;
@@ -50,6 +51,7 @@ public class Enemy : StateMachineCore
     private void SelectStates()
     {
         if (IsChasing() || IsAttacking()) return;
+        if (BeatGameManager.Instance.GameStarted) return;
         if (CheckForPlayer())
         {
             GameManager.Instance.SetPlayerSpotted(true);
@@ -68,6 +70,7 @@ public class Enemy : StateMachineCore
         if (noise.Type == NoiseType.Player) GameManager.Instance.SetPlayerSpotted(true);
         if (IsOnSameLayer())
         {
+            _targetPos = noise.Location;
             _chase.SetTarget(noise.Location);
             machine.Set(_chase);
         }
@@ -121,6 +124,12 @@ public class Enemy : StateMachineCore
             {
                 machine.Set(_attack);
                 player.SetPlayerDead();
+            }
+            else if (IsChasing() && !BeatGameManager.Instance.GameStarted &&
+                     Mathf.Abs(_targetPos.x - transform.position.x) < 0.1f)
+            {
+                BeatGameManager.Instance.StartGame(10f);
+                machine.Set(_idle);
             }
         }
     }

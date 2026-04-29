@@ -60,6 +60,7 @@ MonoBehaviour:
   _chase: {fileID: 2890295225613280576}
   _levelNav: {fileID: 2454665890638603380}
   _attack: {fileID: 5603396350037782162}
+  _idle: {fileID: 7345007534003546135}
   _cameraImpulse: {fileID: 2701656654365847893}
   _levelTracker: {fileID: 2487203525676818002}
   _playerLayer:

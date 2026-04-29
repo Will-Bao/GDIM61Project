@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.InputSystem.EnhancedTouch;
 
 public class Player : StateMachineCore
 {
