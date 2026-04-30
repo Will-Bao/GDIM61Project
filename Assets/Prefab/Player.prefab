@@ -233,6 +233,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _deadAnim: {fileID: 7400000, guid: 6ec10e83de012f44f8bf5e36761b2812, type: 2}
   _movementHandler: {fileID: 7616177804757329783}
+  _spriteRenderer: {fileID: 581149314248266729}
+  _invisDelay: 0.6
 --- !u!1 &2147331527123630340
 GameObject:
   m_ObjectHideFlags: 0

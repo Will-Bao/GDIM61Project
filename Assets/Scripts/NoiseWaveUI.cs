@@ -17,6 +17,7 @@ public class NoiseWaveUI : MonoBehaviour
     private void PlayNoiseAnimation(NoiseData noise)
     {
         float noisePercent = (float)noise.Level / NoiseManager.Instance.MaxNoise;
+        if (noisePercent <= 0) return;
 
         if (noisePercent <= 0.25f)
         {

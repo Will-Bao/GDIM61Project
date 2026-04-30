@@ -1,0 +1,572 @@
+fileFormatVersion: 2
+guid: 28b0a6bc2762e8d46b28e80d49128cc7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8101719940853769532
+    second: Playereater_0
+  - first:
+      213: 2585373225230077446
+    second: Playereater_1
+  - first:
+      213: 7237882218711413689
+    second: Playereater_2
+  - first:
+      213: 9012060002665896028
+    second: Playereater_3
+  - first:
+      213: 9216335945886520295
+    second: Playereater_4
+  - first:
+      213: -5761498881526019378
+    second: Playereater_5
+  - first:
+      213: -7924021444768950859
+    second: Playereater_6
+  - first:
+      213: -5852942334634482120
+    second: Playereater_7
+  - first:
+      213: 6413711172096564484
+    second: Playereater_8
+  - first:
+      213: 3801123689888005618
+    second: Playereater_9
+  - first:
+      213: -1406097659651573984
+    second: Playereater_10
+  - first:
+      213: -8085811310531981933
+    second: Playereater_11
+  - first:
+      213: 99413908111362513
+    second: Playereater_12
+  - first:
+      213: -8359041793622149356
+    second: Playereater_13
+  - first:
+      213: -4303946772787668569
+    second: Playereater_14
+  - first:
+      213: 3717116940309940302
+    second: Playereater_15
+  - first:
+      213: 3911990717971973624
+    second: Playereater_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Playereater_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 804
+        width: 647
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ca56b773a8e09f80800000000000000
+      internalID: -8101719940853769532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Playereater_1
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 804
+        width: 647
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60e05ad104711e320800000000000000
+      internalID: 2585373225230077446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Playereater_2
+      rect:
+        serializedVersion: 2
+        x: 1294
+        y: 804
+        width: 647
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b3f86ca78f127460800000000000000
+      internalID: 7237882218711413689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Playereater_3
+      rect:
+        serializedVersion: 2
+        x: 1941
+        y: 804
+        width: 647
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c58186113d4411d70800000000000000
+      internalID: 9012060002665896028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Playereater_4
+      rect:
+        serializedVersion: 2
+        x: 2588
+        y: 804
+        width: 647
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e3da3966b007ef70800000000000000
+      internalID: 9216335945886520295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Playereater_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 536
+        width: 647
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecac4d00b4b0b00b0800000000000000
+      internalID: -5761498881526019378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Playereater_6
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 536
+        width: 647
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b518ffaa78380290800000000000000
+      internalID: -7924021444768950859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Playereater_7
+      rect:
+        serializedVersion: 2
+        x: 1294
+        y: 536
+        width: 647
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8362445f4fb26cea0800000000000000
+      internalID: -5852942334634482120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Playereater_8
+      rect:
+        serializedVersion: 2
+        x: 1941
+        y: 536
+        width: 647
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40d15c86454120950800000000000000
+      internalID: 6413711172096564484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Playereater_9
+      rect:
+        serializedVersion: 2
+        x: 2588
+        y: 536
+        width: 647
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fdb8135bdd40c430800000000000000
+      internalID: 3801123689888005618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Playereater_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 268
+        width: 647
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 027b5fcd0a98c7ce0800000000000000
+      internalID: -1406097659651573984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Playereater_11
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 268
+        width: 647
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39dc7ea147d69cf80800000000000000
+      internalID: -8085811310531981933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Playereater_12
+      rect:
+        serializedVersion: 2
+        x: 1294
+        y: 268
+        width: 647
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d906b63c60316100800000000000000
+      internalID: 99413908111362513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Playereater_13
+      rect:
+        serializedVersion: 2
+        x: 1941
+        y: 268
+        width: 647
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 417f18cd6c7befb80800000000000000
+      internalID: -8359041793622149356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Playereater_14
+      rect:
+        serializedVersion: 2
+        x: 2588
+        y: 268
+        width: 647
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a95dc3a63f4544c0800000000000000
+      internalID: -4303946772787668569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Playereater_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 647
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e48c2cfb92ad59330800000000000000
+      internalID: 3717116940309940302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Playereater_16
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 0
+        width: 647
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f54855d4de2a4630800000000000000
+      internalID: 3911990717971973624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 70f6d378372a63143a2d69de0c95f715
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Playereater_0: -8101719940853769532
+      Playereater_1: 2585373225230077446
+      Playereater_10: -1406097659651573984
+      Playereater_11: -8085811310531981933
+      Playereater_12: 99413908111362513
+      Playereater_13: -8359041793622149356
+      Playereater_14: -4303946772787668569
+      Playereater_15: 3717116940309940302
+      Playereater_16: 3911990717971973624
+      Playereater_2: 7237882218711413689
+      Playereater_3: 9012060002665896028
+      Playereater_4: 9216335945886520295
+      Playereater_5: -5761498881526019378
+      Playereater_6: -7924021444768950859
+      Playereater_7: -5852942334634482120
+      Playereater_8: 6413711172096564484
+      Playereater_9: 3801123689888005618
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
