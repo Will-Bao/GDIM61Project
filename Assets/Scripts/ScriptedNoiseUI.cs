@@ -9,14 +9,7 @@ public class ScriptedNoiseStep : EncounterStep
 
     public override IEnumerator Execute(EncounterContext context)
     {
-        NoiseManager.Instance.CreateNoise(
-            new NoiseData(
-                context.Location,
-                noiseLevel,
-                context.Layer,
-                noiseType
-            )
-        );
+        NoiseManager.Instance.CreateNoise(new NoiseData(context.Location, noiseLevel, context.Layer, noiseType));
 
         yield return null;
     }
