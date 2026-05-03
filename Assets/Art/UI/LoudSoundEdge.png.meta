@@ -1,31 +1,61 @@
 fileFormatVersion: 2
-guid: 86a66c9f68716c147ac22e92db75a5b4
+guid: 1b504eb8cde02b448803eaf64ec83a06
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8581591226518741690
-    second: LowSoundEdge_0
+      213: 1350068218791737716
+    second: LoudSoundEdge_0
   - first:
-      213: 3908488166574639799
-    second: LowSoundEdge_1
+      213: 3288899832411566284
+    second: LoudSoundEdge_1
   - first:
-      213: 6987281192058545726
-    second: LowSoundEdge_2
+      213: -5706738158879799295
+    second: LoudSoundEdge_2
   - first:
-      213: -9196985451908293044
-    second: LowSoundEdge_3
+      213: 5108456754290067938
+    second: LoudSoundEdge_3
   - first:
-      213: 8052140967124084694
-    second: LowSoundEdge_4
+      213: 1345270267713152991
+    second: LoudSoundEdge_4
   - first:
-      213: -551620098296099736
-    second: LowSoundEdge_5
+      213: 3365026542413686009
+    second: LoudSoundEdge_5
   - first:
-      213: -6855423425962356846
-    second: LowSoundEdge_6
+      213: 6155192244323699343
+    second: LoudSoundEdge_6
   - first:
-      213: 4192288277107707661
-    second: LowSoundEdge_7
+      213: 6968954082033016546
+    second: LoudSoundEdge_7
+  - first:
+      213: 478974725314873170
+    second: LoudSoundEdge_8
+  - first:
+      213: 1517011977640864991
+    second: LoudSoundEdge_9
+  - first:
+      213: 7858405594509112062
+    second: LoudSoundEdge_10
+  - first:
+      213: 6154965256141204844
+    second: LoudSoundEdge_11
+  - first:
+      213: 3012085130424932775
+    second: LoudSoundEdge_12
+  - first:
+      213: -6545950112414951105
+    second: LoudSoundEdge_13
+  - first:
+      213: -366046340162194234
+    second: LoudSoundEdge_14
+  - first:
+      213: 2514011959156571862
+    second: LoudSoundEdge_15
+  - first:
+      213: 4551628622495281317
+    second: LoudSoundEdge_16
+  - first:
+      213: -6250286715357626304
+    second: LoudSoundEdge_17
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -134,7 +164,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LowSoundEdge_0
+      name: LoudSoundEdge_0
       rect:
         serializedVersion: 2
         x: 0
@@ -149,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ab22248d0cfe71770800000000000000
-      internalID: 8581591226518741690
+      spriteID: 47930ab54e76cb210800000000000000
+      internalID: 1350068218791737716
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LowSoundEdge_1
+      name: LoudSoundEdge_1
       rect:
         serializedVersion: 2
         x: 320
@@ -171,14 +201,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7bacf79874dbd3630800000000000000
-      internalID: 3908488166574639799
+      spriteID: cc0bbb4e8f484ad20800000000000000
+      internalID: 3288899832411566284
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LowSoundEdge_2
+      name: LoudSoundEdge_2
       rect:
         serializedVersion: 2
         x: 640
@@ -193,14 +223,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e36ea66593fc7f060800000000000000
-      internalID: 6987281192058545726
+      spriteID: 1088dcd41e79dc0b0800000000000000
+      internalID: -5706738158879799295
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LowSoundEdge_3
+      name: LoudSoundEdge_3
       rect:
         serializedVersion: 2
         x: 960
@@ -213,16 +243,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 4fb81605a6b99ae4684bf76893508965
-      internalID: 745872457
+      spriteID: 2e987ed2a52e4e640800000000000000
+      internalID: 5108456754290067938
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LowSoundEdge_4
+      name: LoudSoundEdge_4
       rect:
         serializedVersion: 2
         x: 1280
@@ -235,10 +265,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 475a1224619a8284fad125e7b5e0e790
-      internalID: -216890758
+      spriteID: fd7efe15e2c5ba210800000000000000
+      internalID: 1345270267713152991
       vertices: []
       indices: 
       edges: []
@@ -247,7 +277,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: eb243bf8dd0440743b9800d935d22b73
+    spriteID: 46491d281bfd66244b2cd8d4e83696b1
     internalID: 0
     vertices: []
     indices: 
@@ -257,11 +287,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      LowSoundEdge_0: 8581591226518741690
-      LowSoundEdge_1: 3908488166574639799
-      LowSoundEdge_2: 6987281192058545726
-      LowSoundEdge_3: 745872457
-      LowSoundEdge_4: -216890758
+      LoudSoundEdge_0: 1350068218791737716
+      LoudSoundEdge_1: 3288899832411566284
+      LoudSoundEdge_2: -5706738158879799295
+      LoudSoundEdge_3: 5108456754290067938
+      LoudSoundEdge_4: 1345270267713152991
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
