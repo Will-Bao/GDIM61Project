@@ -5,6 +5,7 @@ public class LevelNavigator : MonoBehaviour
 {
     [Header("Components")]
     [SerializeField] private InputManager _input;
+    [SerializeField] private Player _player;
     [SerializeField] private GameObject _nextIndicator;
     [SerializeField] private GameObject _backIndicator;
 
@@ -22,12 +23,14 @@ public class LevelNavigator : MonoBehaviour
         if (_isNearExit && _input.MoveInput.y > 0)
         {
             LevelManager.Instance.NextLevel();
+            _player.SetPlayerTransition(1);
             _isNearExit = false;
             _isNearEntrance = true;
         }
         else if (_isNearEntrance && _input.MoveInput.y < 0)
         {
             LevelManager.Instance.PreviousLevel();
+            _player.SetPlayerTransition(-1);
             _isNearEntrance = false;
             _isNearExit = true;
         }

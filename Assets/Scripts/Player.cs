@@ -8,6 +8,7 @@ public class Player : StateMachineCore
     [SerializeField] private PlayerMoveState _run;
     [SerializeField] private PlayerMoveState _crounch;
     [SerializeField] private PlayerDeadState _dead;
+    [SerializeField] private LevelTransitionState _levelTransition;
 
     [Header("Components")]
     [SerializeField] private InputManager _inputManager;
@@ -39,7 +40,7 @@ public class Player : StateMachineCore
 
     private void SelectStates()
     {
-        if (_isDead) return;
+        if (_isDead || IsTransitioning()) return;
         if (_inputManager.MoveInput.y < 0)
         {
             SetCrouch(true);
@@ -67,6 +68,11 @@ public class Player : StateMachineCore
         _spriteRenderer.sortingOrder = crouch ? -5 : 0;
     }
 
+    private bool IsTransitioning()
+    {
+        return (machine.state == _levelTransition && !machine.state.isComplete);
+    }
+
     public void ToggleHiding(bool hiding)
     {
         IsHidden = hiding;
@@ -76,5 +82,11 @@ public class Player : StateMachineCore
     {
         machine.Set(_dead);
         _isDead = true;
+    }
+
+    public void SetPlayerTransition(int direction)
+    {
+        _levelTransition.SetDirection(direction);
+        machine.Set(_levelTransition);
     }
 }
