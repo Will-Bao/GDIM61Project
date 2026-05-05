@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecbc7fa6e9399d0499e7c495802220a0, type: 3}
-  m_Name: GlobalEnemyAlert
+  m_Script: {fileID: 11500000, guid: 9dd552588f3ed7746a7fe7fdcdc627c4, type: 3}
+  m_Name: NoiseLevel5
   m_EditorClassIdentifier: 
-  _noiseLevel: 5
+  noiseLevel: 5
+  noiseType: 0

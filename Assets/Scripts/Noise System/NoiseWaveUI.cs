@@ -16,16 +16,23 @@ public class NoiseWaveUI : MonoBehaviour
 
     private void PlayNoiseAnimation(NoiseData noise)
     {
-        float noisePercent = (float)noise.Level / NoiseManager.Instance.MaxNoise;
-        if (noisePercent <= 0) return;
+        int level = noise.Level;
 
-        if (noisePercent <= 0.25f)
+        if (level == 0)
+        {
+            return;
+        }
+        else if (level == 1)
         {
             _animator.SetTrigger("LowNoise");
         }
-        else if (noisePercent <= 0.6f)
+        else if (level == 2)
         {
             _animator.SetTrigger("MediumNoise");
+        }
+        else if (level == 5)
+        {
+            _animator.SetTrigger("LoudNoise");
         }
     }
 }
