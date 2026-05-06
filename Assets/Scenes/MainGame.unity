@@ -678,6 +678,8 @@ MonoBehaviour:
   _hitWindow: 0.25
   _xOffset: 300
   _attemptsNum: 3
+  _delayMult: 0.5
+  _minDelay: 0.1
 --- !u!1 &718949964
 GameObject:
   m_ObjectHideFlags: 0

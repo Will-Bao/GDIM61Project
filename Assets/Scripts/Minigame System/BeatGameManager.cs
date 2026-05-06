@@ -24,6 +24,10 @@ public class BeatGameManager : MonoBehaviour
     [SerializeField] private float _xOffset;
     [SerializeField] private int _attemptsNum;
 
+    [Header("Difficulty")]
+    [SerializeField] private float _delayMult;
+    [SerializeField] private float _minDelay;
+
     public event Action<bool> BeatGameStarted;
     public bool GameStarted { get; private set; }
 
@@ -34,6 +38,7 @@ public class BeatGameManager : MonoBehaviour
     private int _currentAttempts;
     private List<BeatObject> _activeBeats = new();
     private Player _player;
+    private int _totalGameAmount = 0;
 
     private void Awake()
     {
@@ -56,6 +61,7 @@ public class BeatGameManager : MonoBehaviour
     {
         if (GameStarted) return;
         GameStarted = true;
+        _totalGameAmount++;
         _gameTimer = 0;
         _duration = duration;
         _currentAttempts = _attemptsNum;
@@ -115,7 +121,7 @@ public class BeatGameManager : MonoBehaviour
         if (!GameStarted) return;
         if (!_player.IsHidden) EndGame();
         _gameTimer += Time.deltaTime;
-        if (_gameTimer + _travelTime < _duration && Time.time - _lastBeatTime > _delay)
+        if (_gameTimer + _travelTime < _duration && Time.time - _lastBeatTime > GetDelay())
         {
             SpawnBeat();
             _lastBeatTime = Time.time;
@@ -171,5 +177,11 @@ public class BeatGameManager : MonoBehaviour
     {
         return _activeBeats.Where(n => n.GetData().direction == direction)
                            .OrderBy(n => Mathf.Abs(Time.time - n.GetData().hitTime)).FirstOrDefault();
+    }
+
+    private float GetDelay()
+    {
+        float delay = _delay / (1 + _totalGameAmount * _delayMult);
+        return Mathf.Max(delay, _minDelay);
     }
 }
