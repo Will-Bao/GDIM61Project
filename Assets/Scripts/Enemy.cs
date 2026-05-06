@@ -1,6 +1,7 @@
 using System;
 using Unity.Cinemachine;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Enemy : StateMachineCore
 {
@@ -26,8 +27,13 @@ public class Enemy : StateMachineCore
     [Header("Proximity Audio")]
     [SerializeField] private AudioClip _proximityAudio;
 
+    [Header("Random Teleport")]
+    [SerializeField] private float _teleportChance;
+    [SerializeField] private float _checkDelay;
+
     private Vector2 _targetPos;
     private float _shakeTimer = 0f;
+    private float _teleportTimer = 0f;
 
     private void Start()
     {
@@ -38,6 +44,7 @@ public class Enemy : StateMachineCore
     private void Update()
     {
         ToggleVisibility(_levelTracker.CurrentLayer >= LevelManager.Instance.CurrentLevel);
+        TeleportCheck();
         SetFacingDirection();
         SelectStates();
         machine.state.DoBranch();
@@ -149,5 +156,30 @@ public class Enemy : StateMachineCore
     private bool IsOnSameLayer()
     {
         return _levelTracker.CurrentLayer == LevelManager.Instance.CurrentLevel;
+    }
+
+    private void TeleportCheck()
+    {
+        if (_levelTracker.CurrentLayer >= LevelManager.Instance.CurrentLevel ||
+            LevelManager.Instance.CurrentLevel == LevelManager.Instance.GetLastLevel())
+        {
+            _teleportTimer = 0f;
+            return;
+        }
+        else
+        {
+            _teleportTimer += Time.deltaTime;
+        }
+
+        if (_teleportTimer >= _checkDelay)
+        {
+            _teleportTimer = 0f;
+            if (Random.value > _teleportChance) return;
+            // Teleport
+            int targetLayer = Random.Range(LevelManager.Instance.CurrentLevel + 1, LevelManager.Instance.GetLastLevel());
+            int shiftAmount = targetLayer - _levelTracker.CurrentLayer;
+            _levelTracker.TransitionNewLayer(shiftAmount);
+            Debug.Log($"Enemy teleported to layer {targetLayer}");
+        }
     }
 }

@@ -73,6 +73,11 @@ public class LevelManager : MonoBehaviour
         OnLevelSwitched?.Invoke(CurrentLevel);
     }
 
+    public int GetLastLevel()
+    {
+        return _lastLevel;
+    }
+
     private void UpdateLevels()
     {
         for (int i = 0; i < _levels.Count; i++)
