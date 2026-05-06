@@ -669,6 +669,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _beatPrefab: {fileID: 4267969427455733839, guid: 57dbc08f3906ad042988962d7122f139, type: 3}
   _anim: {fileID: 673688262}
+  _screenAnim: {fileID: 718949968}
   _beatParent: {fileID: 2071825599}
   _heartObject: {fileID: 1526902366}
   _encounterImage: {fileID: 718949964}
@@ -677,7 +678,7 @@ MonoBehaviour:
   _delay: 1
   _hitWindow: 0.25
   _xOffset: 300
-  _attemptsNum: 3
+  _attemptsNum: 4
   _delayMult: 0.5
   _minDelay: 0.1
 --- !u!1 &718949964
@@ -691,6 +692,7 @@ GameObject:
   - component: {fileID: 718949965}
   - component: {fileID: 718949967}
   - component: {fileID: 718949966}
+  - component: {fileID: 718949968}
   m_Layer: 5
   m_Name: EncounterImage
   m_TagString: Untagged
@@ -755,6 +757,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 718949964}
   m_CullTransparentMesh: 1
+--- !u!95 &718949968
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718949964}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5982305ffe8f2494a913eb9a316fe82c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &883613419
 GameObject:
   m_ObjectHideFlags: 0

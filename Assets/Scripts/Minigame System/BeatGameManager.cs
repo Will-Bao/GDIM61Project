@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Cinemachine;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -10,6 +11,7 @@ public class BeatGameManager : MonoBehaviour
     [Header("Components")]
     [SerializeField] private GameObject _beatPrefab;
     [SerializeField] private Animator _anim;
+    [SerializeField] private Animator _screenAnim;
     [SerializeField] private GameObject _beatParent;
     [SerializeField] private GameObject _heartObject;
     [SerializeField] private GameObject _encounterImage;
@@ -75,6 +77,7 @@ public class BeatGameManager : MonoBehaviour
         Beat data = beat.GetData();
         _activeBeats.Remove(beat);
         _anim.SetTrigger("OnBeatMiss");
+        _screenAnim.SetTrigger("Shake");
         SoundFXManager.instance.PlaySoundFXClip(_beatClip, transform, 1f, regulated:false, randPitch: true);
 
         string direction = data.direction == -1 ? "Left" : "Right";
