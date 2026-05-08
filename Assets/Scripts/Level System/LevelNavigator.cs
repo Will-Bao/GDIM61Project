@@ -25,7 +25,7 @@ public class LevelNavigator : MonoBehaviour
             LevelManager.Instance.NextLevel();
             _player.SetPlayerTransition(1);
             _isNearExit = false;
-            _isNearEntrance = true;
+            if (LevelManager.Instance.CurrentLevel > 1) _isNearEntrance = true;
         }
         else if (_isNearEntrance && _input.MoveInput.y < 0)
         {
