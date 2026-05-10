@@ -13,7 +13,7 @@ public abstract class StateMachineCore : MonoBehaviour
     [SerializeField] private bool _debug;
 
     private float _facingDirection;
-
+    public float FacingDirection => _facingDirection;
     protected StateMachine machine;
 
     /// <summary>
@@ -37,9 +37,14 @@ public abstract class StateMachineCore : MonoBehaviour
     protected void SetFacingDirection()
     {
         // Returns -1, 0, or 1 for horizontal facing direction
-        _facingDirection = (Mathf.Abs(rb.linearVelocityX) > 0.1f) ? Mathf.Sign(rb.linearVelocityX) : 0;
-
-        if (_facingDirection == 0) return;
+        if (Mathf.Abs(rb.linearVelocityX) > 0.1f)
+        {
+            _facingDirection = Mathf.Sign(rb.linearVelocityX);
+        }
+        else if (_facingDirection == 0)
+        {
+            _facingDirection = 1f;
+        }
 
         Vector3 scale = transform.localScale;
         scale.x = Mathf.Abs(scale.x) * _facingDirection;
@@ -49,11 +54,14 @@ public abstract class StateMachineCore : MonoBehaviour
     private void OnDrawGizmos()
     {
 #if UNITY_EDITOR
-        if (Application.isPlaying && machine.state != null && _debug)
-        {
-            List<State> states = machine.GetActiveStatesBranch();
-            UnityEditor.Handles.Label(transform.position, "Active States: " + string.Join(" > ", states));
-        }
+            if (!Application.isPlaying) return;
+        if (!_debug) return;
+        if (machine == null) return;
+        if (machine.state == null) return;
+        
+        List<State> states = machine.GetActiveStatesBranch();
+        
+        UnityEditor.Handles.Label(transform.position, "Active States: " + string.Join(" > ", states));
 #endif
     }
 }
