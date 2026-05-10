@@ -13,6 +13,8 @@ public class PlayerThrowState : State
 
     public override void Enter()
     {
+        anim.Play(_throwAnim.name);
+        _throwDuration = _throwAnim.length;
         _player = core as Player;
         _hasThrown = false;
         isComplete = false;

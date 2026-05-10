@@ -445,8 +445,8 @@ MonoBehaviour:
   _throwOffsetY: 0.2
   _thrownBookPrefab: {fileID: 7619999467134166317, guid: 10d7ea0ea7dde7149b2c236649ddb54d, type: 3}
   _throwForce: 8
-  _player: {fileID: 0}
-  _inputManager: {fileID: 0}
+  _player: {fileID: 4905153206443257861}
+  _inputManager: {fileID: 421417856281247992}
 --- !u!114 &3419778266756775586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -686,6 +686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6112017db47dd934a8ba9b6016a382ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _throwAnim: {fileID: 7400000, guid: c27bc7b4973d95a408c41d9af67ea2e3, type: 2}
   _throwUpwardForce: 0.75
   _throwDuration: 0.15
 --- !u!1 &3894816033969124349
