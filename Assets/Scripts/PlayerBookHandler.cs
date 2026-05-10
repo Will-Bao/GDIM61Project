@@ -10,10 +10,12 @@ public class PlayerBookHandler : MonoBehaviour
     [SerializeField] private Player _player;
     [SerializeField] private InputManager _inputManager;
     public bool HasBook => _hasBook;
+    private bool _canThrow;
     
     public void GainBook()
     {
         _hasBook = true;
+        _canThrow = false;
     }
     public void ThrowBook(Vector2 direction)
     {
@@ -38,10 +40,18 @@ public class PlayerBookHandler : MonoBehaviour
     {
         if (!_hasBook) return;
         if (_inputManager == null) return;
-        if (!_inputManager.InteractPressed) return;
+
+        if (!_inputManager.InteractPressed)
+        {
+            _canThrow = true;
+            return;
+        }
+
+        if (!_canThrow) return;
 
         float xDirection = _player.transform.localScale.x > 0 ? 1f : -1f;
         ThrowBook(new Vector2(xDirection, 0.75f));
+        _canThrow = false;
     }
 
 }
