@@ -9,6 +9,8 @@ public class Player : StateMachineCore
     [SerializeField] private PlayerMoveState _crounch;
     [SerializeField] private PlayerDeadState _dead;
     [SerializeField] private LevelTransitionState _levelTransition;
+    [SerializeField] private PlayerThrowState _throw;
+    [SerializeField] private PlayerBookHandler _bookHandler;
 
     [Header("Components")]
     [SerializeField] private InputManager _inputManager;
@@ -17,8 +19,10 @@ public class Player : StateMachineCore
     public bool IsHidden { get; private set; }
     public bool IsCrouching { get; private set; }
     public event Action<bool> OnCrouch;
-
+    public PlayerBookHandler BookHandler => _bookHandler;
+    public InputManager InputManager => _inputManager;
     private bool _isDead;
+    private bool _canThrowBook;
 
     private void Start()
     {
@@ -29,10 +33,36 @@ public class Player : StateMachineCore
     private void Update()
     {
         SetFacingDirection();
+        CheckThrow();
         SelectStates();
         machine.state.DoBranch();
     }
+private void CheckThrow()
+{
+    if (_bookHandler == null) return;
+    if (!_bookHandler.HasBook)
+    {
+        _canThrowBook = false;
+        return;
+    }
 
+    if (!_inputManager.InteractPressed)
+    {
+        _canThrowBook = true;
+        return;
+    }
+
+    if (!_canThrowBook) return;
+    if (IsTransitioning()) return;
+    if (IsThrowing()) return;
+
+    _canThrowBook = false;
+    machine.Set(_throw);
+}
+    private bool IsThrowing()
+    {
+        return machine.state == _throw && !machine.state.isComplete;
+    }
     private void FixedUpdate()
     {
         machine.state.FixedDoBranch();
@@ -40,7 +70,7 @@ public class Player : StateMachineCore
 
     private void SelectStates()
     {
-        if (_isDead || IsTransitioning()) return;
+        if (_isDead || IsTransitioning() || IsThrowing()) return;
         if (_inputManager.MoveInput.y < 0)
         {
             SetCrouch(true);

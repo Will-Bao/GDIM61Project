@@ -299,6 +299,8 @@ MonoBehaviour:
   _crounch: {fileID: 6480722974877584487}
   _dead: {fileID: 4049706027336870320}
   _levelTransition: {fileID: 9041169478419149461}
+  _throw: {fileID: 540920864323446042}
+  _bookHandler: {fileID: 4310077925600546154}
   _inputManager: {fileID: 421417856281247992}
   _spriteRenderer: {fileID: 581149314248266729}
 --- !u!114 &421417856281247992
@@ -439,9 +441,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hasBook: 0
-  _throwPoint: {fileID: 5478102249699470678}
+  _throwOffsetX: 0.5
+  _throwOffsetY: 0.2
   _thrownBookPrefab: {fileID: 7619999467134166317, guid: 10d7ea0ea7dde7149b2c236649ddb54d, type: 3}
   _throwForce: 8
+  _player: {fileID: 0}
+  _inputManager: {fileID: 0}
 --- !u!114 &3419778266756775586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -637,6 +642,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2942721828205779800
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8043798502562113902}
+  - component: {fileID: 540920864323446042}
+  m_Layer: 7
+  m_Name: PlayerThrowState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8043798502562113902
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2942721828205779800}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3687580200493310022}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &540920864323446042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2942721828205779800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6112017db47dd934a8ba9b6016a382ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _throwUpwardForce: 0.75
+  _throwDuration: 0.15
 --- !u!1 &3894816033969124349
 GameObject:
   m_ObjectHideFlags: 0
@@ -1248,6 +1299,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8043798502562113902}
   - {fileID: 7598235223181405973}
   - {fileID: 2038324071242101708}
   - {fileID: 2404993199071637415}

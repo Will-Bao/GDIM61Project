@@ -36,22 +36,22 @@ public class PlayerBookHandler : MonoBehaviour
 
         _hasBook = false;    
     }
-    private void Update()
-    {
-        if (!_hasBook) return;
-        if (_inputManager == null) return;
+    // private void Update()
+    // {
+    //     if (!_hasBook) return;
+    //     if (_inputManager == null) return;
 
-        if (!_inputManager.InteractPressed)
-        {
-            _canThrow = true;
-            return;
-        }
+    //     if (!_inputManager.InteractPressed)
+    //     {
+    //         _canThrow = true;
+    //         return;
+    //     }
 
-        if (!_canThrow) return;
+    //     if (!_canThrow) return;
 
-        float xDirection = _player.transform.localScale.x > 0 ? 1f : -1f;
-        ThrowBook(new Vector2(xDirection, 0.75f));
-        _canThrow = false;
-    }
+    //     float xDirection = _player.transform.localScale.x > 0 ? 1f : -1f;
+    //     ThrowBook(new Vector2(xDirection, 0.75f));
+    //     _canThrow = false;
+    // }
 
 }
