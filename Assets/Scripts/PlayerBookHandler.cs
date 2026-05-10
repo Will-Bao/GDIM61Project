@@ -10,12 +10,10 @@ public class PlayerBookHandler : MonoBehaviour
     [SerializeField] private Player _player;
     [SerializeField] private InputManager _inputManager;
     public bool HasBook => _hasBook;
-    private bool _canThrow;
     
     public void GainBook()
     {
         _hasBook = true;
-        _canThrow = false;
     }
     public void ThrowBook(Vector2 direction)
     {
