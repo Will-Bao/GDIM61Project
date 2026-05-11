@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayerWin()
     {
-        SceneManager.LoadScene("MainMenu"); // TODO: change to win screen once added
+        SceneManager.LoadScene("WinScreen"); // TODO: change to win screen once added
     }
 
     public void ReloadLevel()
