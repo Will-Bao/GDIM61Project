@@ -8,7 +8,6 @@ public class DodgeGameManager : MonoBehaviour
     [Header("Components")]
     [SerializeField] private GameObject _tongueObj;
     [SerializeField] private GameObject _heartObj;
-    [SerializeField] private GameObject _encounterImage;
     [SerializeField] private Animator _screenAnim;
 
     [Header("Animations")]
@@ -58,7 +57,6 @@ public class DodgeGameManager : MonoBehaviour
         _centerX = _tongueObj.transform.position.x;
         _tongueObj.SetActive(false);
         _heartObj.SetActive(false);
-        _encounterImage.SetActive(false);
     }
     private void Start()
     {
@@ -77,7 +75,6 @@ public class DodgeGameManager : MonoBehaviour
         _gameDuration = duration;
         _tongueObj.SetActive(true);
         _heartObj.SetActive(true);
-        _encounterImage.SetActive(true);
     }
 
     private void Update()
@@ -171,7 +168,6 @@ public class DodgeGameManager : MonoBehaviour
         _gameStarted = false;
         _tongueObj.SetActive(false);
         _heartObj.SetActive(false);
-        _encounterImage.SetActive(false);
         MinigameManager.Instance.EndGame();
     }
 

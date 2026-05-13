@@ -14,7 +14,6 @@ public class BeatGameManager : MonoBehaviour
     [SerializeField] private Animator _screenAnim;
     [SerializeField] private GameObject _beatParent;
     [SerializeField] private GameObject _heartObject;
-    [SerializeField] private GameObject _encounterImage;
 
     [Header("Audio")]
     [SerializeField] private AudioClip _beatClip;
@@ -56,7 +55,6 @@ public class BeatGameManager : MonoBehaviour
         else Destroy(this);
         _rect = GetComponent<RectTransform>();
         _heartObject.SetActive(false);
-        _encounterImage.SetActive(false);
     }
 
     private void Start()
@@ -84,7 +82,6 @@ public class BeatGameManager : MonoBehaviour
         _duration = duration;
         _currentAttempts = _attemptsNum;
         _heartObject.SetActive(true);
-        _encounterImage.SetActive(true);
     }
 
     public void NotifyMiss(BeatObject beat)
@@ -193,7 +190,6 @@ public class BeatGameManager : MonoBehaviour
         if (!_gameStarted) return;
         _gameStarted = false;
         _heartObject.SetActive(false);
-        _encounterImage.SetActive(false);
         ClearBeats();
         MinigameManager.Instance.EndGame();
     }
