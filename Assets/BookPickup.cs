@@ -5,6 +5,7 @@ public class BookPickup : MonoBehaviour
     private PlayerBookHandler _playerBookHandler;
     private InputManager _inputManager;
     private bool _playerInRange;
+    [SerializeField] private LevelMarker _marker;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -13,17 +14,22 @@ public class BookPickup : MonoBehaviour
 
         if (_playerBookHandler != null && _inputManager != null)
         {
+            if (_marker != null && LevelManager.Instance.CurrentLevel != _marker.CurrentLayer) return;
             _playerInRange = true;
         }
     }
-
+    private void Awake()
+    {
+    if (_marker == null)
+        _marker = GetComponent<LevelMarker>();
+    }
     private void OnTriggerExit2D(Collider2D other)
     {
         PlayerBookHandler playerBookHandler = other.GetComponentInParent<PlayerBookHandler>();
 
         if (playerBookHandler == _playerBookHandler)
         {
-            _playerInRange = false;
+            _playerInRange = false; 
             _playerBookHandler = null;
             _inputManager = null;
         }
