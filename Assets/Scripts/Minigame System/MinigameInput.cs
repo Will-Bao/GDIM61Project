@@ -8,13 +8,15 @@ public class MinigameInput : MonoBehaviour
     [SerializeField] private MovementHandler _movement;
     [SerializeField] private InputManager _playerInput;
 
+    public float XInput {  get; private set; }
+
     private bool _inMinigame;
     private float _lastX;
 
     private void Start()
     {
-        BeatGameManager.Instance.BeatGameStarted += HandleMinigame;
-        HandleMinigame(BeatGameManager.Instance.GameStarted);
+        MinigameManager.Instance.OnGameStarted += HandleMinigame;
+        HandleMinigame(MinigameManager.Instance.GameStarted);
     }
 
     private void Update()
@@ -24,7 +26,7 @@ public class MinigameInput : MonoBehaviour
 
     private void OnDestroy()
     {
-        BeatGameManager.Instance.BeatGameStarted -= HandleMinigame;
+        MinigameManager.Instance.OnGameStarted -= HandleMinigame;
     }
     private void HandleMinigame(bool isStarted)
     {
@@ -34,14 +36,11 @@ public class MinigameInput : MonoBehaviour
 
     private void UpdateMinigameInput()
     {
-        if (!_inMinigame) return;
-        float currentX = _playerInput.MoveInput.x;
-
-        if (_lastX == 0 && currentX < 0)
-            BeatGameManager.Instance.TryHit(-1);
-        else if (_lastX == 0 && currentX > 0)
-            BeatGameManager.Instance.TryHit(1);
-
-        _lastX = currentX;
+        if (!_inMinigame)
+        {
+            XInput = 0;
+            return;
+        }
+        XInput = _playerInput.MoveInput.x;
     }
 }

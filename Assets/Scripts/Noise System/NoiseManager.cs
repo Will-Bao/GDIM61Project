@@ -28,7 +28,7 @@ public class NoiseManager : MonoBehaviour
     /// <param name="noiseLevel"> Determines far away the noise can be heard. </param>
     public void CreateNoise(NoiseData data)
     {
-        if (BeatGameManager.Instance != null && BeatGameManager.Instance.GameStarted) return;
+        if (MinigameManager.Instance != null && MinigameManager.Instance.GameStarted) return;
         if (data.Level < 0) return;
         if (data.Level > MaxNoise) data.Level = MaxNoise;
         OnNoiseCreated?.Invoke(data);

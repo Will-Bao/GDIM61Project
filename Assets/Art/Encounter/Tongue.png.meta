@@ -1,46 +1,46 @@
 fileFormatVersion: 2
-guid: 293d89de71cebce4891a0e891a91a627
+guid: f69c7005e0000ac4eb35c64b5cf9bb61
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8100426479800741977
-    second: Tongue_0
+      213: -4931289468600407689
+    second: Tongue (1)_0
   - first:
-      213: 5472259535341312193
-    second: Tongue_1
+      213: 227580985376485646
+    second: Tongue (1)_1
   - first:
-      213: -2700593389600428928
-    second: Tongue_2
+      213: -4246030962838242828
+    second: Tongue (1)_2
   - first:
-      213: -2596527082497753810
-    second: Tongue_3
+      213: 5473591359590806347
+    second: Tongue (1)_3
   - first:
-      213: 7716979992688878168
-    second: Tongue_4
+      213: 5441820840396664444
+    second: Tongue (1)_4
   - first:
-      213: -608050161103765966
-    second: Tongue_5
+      213: -65851855698353856
+    second: Tongue (1)_5
   - first:
-      213: -4106703546841471304
-    second: Tongue_6
+      213: -5371038693706977991
+    second: Tongue (1)_6
   - first:
-      213: -3393357754861208234
-    second: Tongue_7
+      213: -666598203977047773
+    second: Tongue (1)_7
   - first:
-      213: 7839105635356917033
-    second: Tongue_8
+      213: 2879981417766686645
+    second: Tongue (1)_8
   - first:
-      213: -3380418080627792153
-    second: Tongue_9
+      213: -722878119723203586
+    second: Tongue (1)_9
   - first:
-      213: 4259254757155253342
-    second: Tongue_10
+      213: 3704823155703999388
+    second: Tongue (1)_10
   - first:
-      213: 1546059559905970463
-    second: Tongue_11
+      213: -5527160085852617002
+    second: Tongue (1)_11
   - first:
-      213: -296536865536805397
-    second: Tongue_12
+      213: 1953915783223343201
+    second: Tongue (1)_12
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -154,18 +154,18 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 180
-        width: 100
+        width: 120
         height: 180
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 950f0b927fe7a6070800000000000000
-      internalID: 8100426479800741977
+      spriteID: 15b24341a32815642b62d57abd15095c
+      internalID: -1871247634
       vertices: []
       indices: 
       edges: []
@@ -174,20 +174,20 @@ TextureImporter:
       name: Tongue_1
       rect:
         serializedVersion: 2
-        x: 321
+        x: 120
         y: 180
-        width: 100
+        width: 120
         height: 180
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1c853cadd0f51fb40800000000000000
-      internalID: 5472259535341312193
+      spriteID: c4c8b7c62ae27f6438cafea480d8a964
+      internalID: 477788201
       vertices: []
       indices: 
       edges: []
@@ -196,20 +196,20 @@ TextureImporter:
       name: Tongue_2
       rect:
         serializedVersion: 2
-        x: 640
+        x: 240
         y: 180
-        width: 100
+        width: 120
         height: 180
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 08c291ade90958ad0800000000000000
-      internalID: -2700593389600428928
+      spriteID: 10a651b37e0df484ca8a8a76b9f8aac3
+      internalID: 1978644973
       vertices: []
       indices: 
       edges: []
@@ -218,20 +218,20 @@ TextureImporter:
       name: Tongue_3
       rect:
         serializedVersion: 2
-        x: 960
+        x: 360
         y: 180
-        width: 100
+        width: 120
         height: 180
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e2d3a0e106847fbd0800000000000000
-      internalID: -2596527082497753810
+      spriteID: 72e747d3bd38bfb4faa8f2876521413b
+      internalID: 621236885
       vertices: []
       indices: 
       edges: []
@@ -240,20 +240,20 @@ TextureImporter:
       name: Tongue_4
       rect:
         serializedVersion: 2
-        x: 1280
+        x: 480
         y: 180
-        width: 100
+        width: 120
         height: 180
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8526403ca68381b60800000000000000
-      internalID: 7716979992688878168
+      spriteID: aa7aec178ea8b8a47b38705718f1f167
+      internalID: 2036540912
       vertices: []
       indices: 
       edges: []
@@ -262,20 +262,20 @@ TextureImporter:
       name: Tongue_5
       rect:
         serializedVersion: 2
-        x: 1600
+        x: 600
         y: 180
-        width: 100
+        width: 120
         height: 180
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 23e7acd9995cf87f0800000000000000
-      internalID: -608050161103765966
+      spriteID: 67719a79bd16d394b996fc17282a467a
+      internalID: 265826608
       vertices: []
       indices: 
       edges: []
@@ -284,20 +284,20 @@ TextureImporter:
       name: Tongue_6
       rect:
         serializedVersion: 2
-        x: 1920
+        x: 720
         y: 180
-        width: 100
+        width: 120
         height: 180
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8b66da4e1ee0207c0800000000000000
-      internalID: -4106703546841471304
+      spriteID: 83eb418d14a57f6419a7be26b6027ed4
+      internalID: 581129647
       vertices: []
       indices: 
       edges: []
@@ -306,20 +306,20 @@ TextureImporter:
       name: Tongue_7
       rect:
         serializedVersion: 2
-        x: 2240
+        x: 840
         y: 180
-        width: 100
+        width: 120
         height: 180
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 65d3ea9c91f58e0d0800000000000000
-      internalID: -3393357754861208234
+      spriteID: 40e9b4e53f33d3f4e894be870b9808ee
+      internalID: -1987477727
       vertices: []
       indices: 
       edges: []
@@ -330,18 +330,18 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 100
+        width: 120
         height: 180
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 92d3630ca091acc60800000000000000
-      internalID: 7839105635356917033
+      spriteID: a460b4fb70396ab469aad24a2e19ac9a
+      internalID: -2065503159
       vertices: []
       indices: 
       edges: []
@@ -350,20 +350,20 @@ TextureImporter:
       name: Tongue_9
       rect:
         serializedVersion: 2
-        x: 320
+        x: 120
         y: 0
-        width: 100
+        width: 120
         height: 180
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7e66fd77aa75611d0800000000000000
-      internalID: -3380418080627792153
+      spriteID: 391052ad1ab038249a17d5601a5c2e6e
+      internalID: -1219529302
       vertices: []
       indices: 
       edges: []
@@ -372,20 +372,20 @@ TextureImporter:
       name: Tongue_10
       rect:
         serializedVersion: 2
-        x: 640
+        x: 240
         y: 0
-        width: 100
+        width: 120
         height: 180
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e5ca12892a9eb1b30800000000000000
-      internalID: 4259254757155253342
+      spriteID: 63e90cf4e2aa13141a31fb13350b1f2a
+      internalID: -2137331986
       vertices: []
       indices: 
       edges: []
@@ -394,20 +394,20 @@ TextureImporter:
       name: Tongue_11
       rect:
         serializedVersion: 2
-        x: 960
+        x: 360
         y: 0
-        width: 100
+        width: 120
         height: 180
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f19cac57af4b47510800000000000000
-      internalID: 1546059559905970463
+      spriteID: 284f5d06d06a3ad43a96b6661a8b8593
+      internalID: 1378949705
       vertices: []
       indices: 
       edges: []
@@ -416,20 +416,20 @@ TextureImporter:
       name: Tongue_12
       rect:
         serializedVersion: 2
-        x: 1280
+        x: 480
         y: 0
-        width: 100
+        width: 120
         height: 180
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a5a7d655bdacf64ebc9969ad50ce5c3
-      internalID: -296536865536805397
+      spriteID: 2c5c7b3cc1499e84c9c81a4a0aafeba3
+      internalID: 1918180554
       vertices: []
       indices: 
       edges: []
@@ -438,20 +438,20 @@ TextureImporter:
       name: Tongue_13
       rect:
         serializedVersion: 2
-        x: 1600
+        x: 600
         y: 0
-        width: 100
+        width: 120
         height: 180
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 785e91e9ec12dc242b4e70de2ad1c2e8
-      internalID: 1530311525
+      spriteID: faf4bc7242210994399a7c7813f9f7ef
+      internalID: 1962832601
       vertices: []
       indices: 
       edges: []
@@ -460,7 +460,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4a86b406b3e2b804aa7b7ef7bd3b0ab0
+    spriteID: 678c256a206684843a0844dd175351c0
     internalID: 0
     vertices: []
     indices: 
@@ -470,22 +470,20 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Tongue_0: 8100426479800741977
-      Tongue_1: 5472259535341312193
-      Tongue_10: 4259254757155253342
-      Tongue_11: 1546059559905970463
-      Tongue_12: -296536865536805397
-      Tongue_13: 1530311525
-      Tongue_14: 1237635876
-      Tongue_15: 866151380
-      Tongue_2: -2700593389600428928
-      Tongue_3: -2596527082497753810
-      Tongue_4: 7716979992688878168
-      Tongue_5: -608050161103765966
-      Tongue_6: -4106703546841471304
-      Tongue_7: -3393357754861208234
-      Tongue_8: 7839105635356917033
-      Tongue_9: -3380418080627792153
+      Tongue_0: -1871247634
+      Tongue_1: 477788201
+      Tongue_10: -2137331986
+      Tongue_11: 1378949705
+      Tongue_12: 1918180554
+      Tongue_13: 1962832601
+      Tongue_2: 1978644973
+      Tongue_3: 621236885
+      Tongue_4: 2036540912
+      Tongue_5: 265826608
+      Tongue_6: 581129647
+      Tongue_7: -1987477727
+      Tongue_8: -2065503159
+      Tongue_9: -1219529302
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

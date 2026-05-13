@@ -30,17 +30,18 @@ public class BeatGameManager : MonoBehaviour
     [SerializeField] private float _delayMult;
     [SerializeField] private float _minDelay;
 
-    public event Action<bool> BeatGameStarted;
-    public bool GameStarted { get; private set; }
-
+    private bool _gameStarted;
     private RectTransform _rect;
+
     private float _gameTimer;
     private float _lastBeatTime;
     private float _duration;
     private int _currentAttempts;
     private List<BeatObject> _activeBeats = new();
+
     private Player _player;
-    private int _totalGameAmount = 0;
+    private MinigameInput _minigameInput;
+    private float _lastInput;
 
     private void Awake()
     {
@@ -57,19 +58,18 @@ public class BeatGameManager : MonoBehaviour
     private void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player").GetComponentInParent<Player>();
+        _minigameInput = _player.GetComponent<MinigameInput>();
     }
 
     public void StartGame(float duration)
     {
-        if (GameStarted) return;
-        GameStarted = true;
-        _totalGameAmount++;
+        if (_gameStarted) return;
+        _gameStarted = true;
         _gameTimer = 0;
         _duration = duration;
         _currentAttempts = _attemptsNum;
         _heartObject.SetActive(true);
         _encounterImage.SetActive(true);
-        BeatGameStarted?.Invoke(true);
     }
 
     public void NotifyMiss(BeatObject beat)
@@ -121,8 +121,11 @@ public class BeatGameManager : MonoBehaviour
 
     private void Update()
     {
-        if (!GameStarted) return;
+        if (!_gameStarted) return;
         if (!_player.IsHidden) EndGame();
+        // Player input
+        HandleInput();
+        // Game logic
         _gameTimer += Time.deltaTime;
         if (_gameTimer + _travelTime < _duration && Time.time - _lastBeatTime > GetDelay())
         {
@@ -133,6 +136,20 @@ public class BeatGameManager : MonoBehaviour
         {
             EndGame();
         }
+    }
+
+    private void HandleInput()
+    {
+        float currentX = _minigameInput.XInput;
+        if (_lastInput == 0 && currentX < 0)
+        {
+            TryHit(-1);
+        }
+        else if (_lastInput == 0 && currentX > 0)
+        {
+            TryHit(1);
+        }
+        _lastInput = currentX;
     }
 
     private void SpawnBeat()
@@ -155,12 +172,12 @@ public class BeatGameManager : MonoBehaviour
 
     private void EndGame()
     {
-        if (!GameStarted) return;
-        GameStarted = false;
+        if (!_gameStarted) return;
+        _gameStarted = false;
         _heartObject.SetActive(false);
         _encounterImage.SetActive(false);
         ClearBeats();
-        BeatGameStarted?.Invoke(false);
+        MinigameManager.Instance.EndGame();
     }
 
     private void ClearBeats()
@@ -184,7 +201,7 @@ public class BeatGameManager : MonoBehaviour
 
     private float GetDelay()
     {
-        float delay = _delay / (1 + _totalGameAmount * _delayMult);
+        float delay = _delay / (1 + MinigameManager.Instance.TotalGameAmount * _delayMult);
         return Mathf.Max(delay, _minDelay);
     }
 }

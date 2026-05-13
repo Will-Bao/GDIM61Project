@@ -58,7 +58,7 @@ public class Enemy : StateMachineCore
     private void SelectStates()
     {
         if (IsChasing() || IsAttacking()) return;
-        if (BeatGameManager.Instance.GameStarted) return;
+        if (MinigameManager.Instance.GameStarted) return;
         if (CheckForPlayer())
         {
             GameManager.Instance.SetPlayerSpotted(true);
@@ -132,10 +132,10 @@ public class Enemy : StateMachineCore
                 machine.Set(_attack);
                 player.SetPlayerDead();
             }
-            else if (IsChasing() && !BeatGameManager.Instance.GameStarted &&
+            else if (IsChasing() && !MinigameManager.Instance.GameStarted &&
                      Mathf.Abs(_targetPos.x - transform.position.x) < 0.1f)
             {
-                BeatGameManager.Instance.StartGame(10f);
+                MinigameManager.Instance.StartGame(MinigameManager.GameType.Random);
                 machine.Set(_idle);
             }
         }
