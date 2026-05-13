@@ -60,21 +60,36 @@ public class DodgeGameManager : MonoBehaviour
     }
     private void Start()
     {
-        _player = GameObject.FindGameObjectWithTag("Player").GetComponentInParent<Player>();
-        _minigameInput = _player.GetComponent<MinigameInput>();
+        SetupPlayerReferences();
         _tongueAnim = _tongueObj.GetComponent<Animator>();
         _heartRect = _heartObj.GetComponent<RectTransform>();
+    }
+    private void SetupPlayerReferences()
+    {
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj == null) return;
+        _player = playerObj.GetComponentInParent<Player>();
+        _minigameInput = _player.GetComponent<MinigameInput>();
     }
 
     public void StartGame(float duration)
     {
         if (_gameStarted) return;
+        if (_player == null)
+        {
+            SetupPlayerReferences();
+        }
         _gameStarted = true;
         _gameTimer = 0;
         _currentAttempts = _attemptsNum;
         _gameDuration = duration;
         _tongueObj.SetActive(true);
         _heartObj.SetActive(true);
+        _heartRect.anchoredPosition = new Vector2(_centerX, _heartRect.anchoredPosition.y);
+
+        // Rebind anim
+        _tongueAnim.Rebind();
+        _tongueAnim.Update(0f);
     }
 
     private void Update()
@@ -166,6 +181,7 @@ public class DodgeGameManager : MonoBehaviour
     {
         if (!_gameStarted) return;
         _gameStarted = false;
+        StopAllCoroutines();
         _tongueObj.SetActive(false);
         _heartObj.SetActive(false);
         MinigameManager.Instance.EndGame();
