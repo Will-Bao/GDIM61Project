@@ -22,7 +22,7 @@ public class PlayerThrowState : State
 
     public override void Do()
     {
-        if (_player == null)
+        if (_player == null || _player.IsDead)
         {
             isComplete = true;
             return;

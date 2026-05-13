@@ -1,0 +1,706 @@
+fileFormatVersion: 2
+guid: 25121a5bb05578140afcebdadac0b273
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -424722700359894554
+    second: Fakeropenupdated_0
+  - first:
+      213: 6074896868944328784
+    second: Fakeropenupdated_1
+  - first:
+      213: -1991660131977686002
+    second: Fakeropenupdated_2
+  - first:
+      213: -5570796907425199923
+    second: Fakeropenupdated_3
+  - first:
+      213: -7615529734834873585
+    second: Fakeropenupdated_4
+  - first:
+      213: 6861361841786316862
+    second: Fakeropenupdated_5
+  - first:
+      213: -6467773179667380335
+    second: Fakeropenupdated_6
+  - first:
+      213: 1003345551295078877
+    second: Fakeropenupdated_7
+  - first:
+      213: 5411552559995424762
+    second: Fakeropenupdated_8
+  - first:
+      213: 6313523555097979948
+    second: Fakeropenupdated_9
+  - first:
+      213: 2422230237339399090
+    second: Fakeropenupdated_10
+  - first:
+      213: -501919865105977444
+    second: Fakeropenupdated_11
+  - first:
+      213: 6360357154592438439
+    second: Fakeropenupdated_12
+  - first:
+      213: -4684610817761571698
+    second: Fakeropenupdated_13
+  - first:
+      213: 9163680118814422337
+    second: Fakeropenupdated_14
+  - first:
+      213: 4247892447534084760
+    second: Fakeropenupdated_15
+  - first:
+      213: -5653768353809905313
+    second: Fakeropenupdated_16
+  - first:
+      213: 6036779693547166614
+    second: Fakeropenupdated_17
+  - first:
+      213: 4922462989899323600
+    second: Fakeropenupdated_18
+  - first:
+      213: -8445706968060947549
+    second: Fakeropenupdated_19
+  - first:
+      213: 5139505908466093986
+    second: Fakeropenupdated_20
+  - first:
+      213: -1172172738946113272
+    second: Fakeropenupdated_21
+  - first:
+      213: 2846244788348363784
+    second: Fakeropenupdated_22
+  - first:
+      213: 2894939059900508254
+    second: Fakeropenupdated_23
+  - first:
+      213: -4147639817463892299
+    second: Fakeropenupdated_24
+  - first:
+      213: -7879339297838597468
+    second: Fakeropenupdated_25
+  - first:
+      213: -2565081258005329460
+    second: Fakeropenupdated_26
+  - first:
+      213: -8342492032756054745
+    second: Fakeropenupdated_27
+  - first:
+      213: -6423554310154853595
+    second: Fakeropenupdated_28
+  - first:
+      213: -484083542806104260
+    second: Fakeropenupdated_29
+  - first:
+      213: -5700214430691487776
+    second: Fakeropenupdated_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Fakeropenupdated_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1568
+        width: 397
+        height: 392
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e9f00d44f41b1af0800000000000000
+      internalID: -424722700359894554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fakeropenupdated_1
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 1568
+        width: 397
+        height: 392
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0583f80248e5e4450800000000000000
+      internalID: 6074896868944328784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fakeropenupdated_2
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 1568
+        width: 397
+        height: 392
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e04992889a33c54e0800000000000000
+      internalID: -1991660131977686002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fakeropenupdated_3
+      rect:
+        serializedVersion: 2
+        x: 1191
+        y: 1568
+        width: 397
+        height: 392
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc883116abd80b2b0800000000000000
+      internalID: -5570796907425199923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fakeropenupdated_4
+      rect:
+        serializedVersion: 2
+        x: 1588
+        y: 1568
+        width: 397
+        height: 392
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0b1eb21e04305690800000000000000
+      internalID: -7615529734834873585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fakeropenupdated_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1176
+        width: 397
+        height: 392
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e38e717fd34783f50800000000000000
+      internalID: 6861361841786316862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fakeropenupdated_6
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 1176
+        width: 397
+        height: 392
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19780229f8add36a0800000000000000
+      internalID: -6467773179667380335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fakeropenupdated_7
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 1176
+        width: 397
+        height: 392
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd169e386799ced00800000000000000
+      internalID: 1003345551295078877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fakeropenupdated_8
+      rect:
+        serializedVersion: 2
+        x: 1191
+        y: 1176
+        width: 397
+        height: 392
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aff02e5b162b91b40800000000000000
+      internalID: 5411552559995424762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fakeropenupdated_9
+      rect:
+        serializedVersion: 2
+        x: 1588
+        y: 1176
+        width: 397
+        height: 392
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2c2dae09342e9750800000000000000
+      internalID: 6313523555097979948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fakeropenupdated_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 784
+        width: 397
+        height: 392
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b333dc319d7d9120800000000000000
+      internalID: 2422230237339399090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fakeropenupdated_11
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 784
+        width: 397
+        height: 392
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9f65aeba82d809f0800000000000000
+      internalID: -501919865105977444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fakeropenupdated_12
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 784
+        width: 397
+        height: 392
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a8b81c2227844850800000000000000
+      internalID: 6360357154592438439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fakeropenupdated_13
+      rect:
+        serializedVersion: 2
+        x: 1191
+        y: 784
+        width: 397
+        height: 392
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8c8e58084becfeb0800000000000000
+      internalID: -4684610817761571698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fakeropenupdated_14
+      rect:
+        serializedVersion: 2
+        x: 1588
+        y: 784
+        width: 397
+        height: 392
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1453e3d448eeb2f70800000000000000
+      internalID: 9163680118814422337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fakeropenupdated_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 392
+        width: 397
+        height: 392
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 892755bbcab83fa30800000000000000
+      internalID: 4247892447534084760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fakeropenupdated_16
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 392
+        width: 397
+        height: 392
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f59c0dc13a7c981b0800000000000000
+      internalID: -5653768353809905313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fakeropenupdated_17
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 392
+        width: 397
+        height: 392
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69b9b25a523f6c350800000000000000
+      internalID: 6036779693547166614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fakeropenupdated_18
+      rect:
+        serializedVersion: 2
+        x: 1191
+        y: 392
+        width: 397
+        height: 392
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d8d4fc420a105440800000000000000
+      internalID: 4922462989899323600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fakeropenupdated_19
+      rect:
+        serializedVersion: 2
+        x: 1588
+        y: 392
+        width: 397
+        height: 392
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a39fa38242daca80800000000000000
+      internalID: -8445706968060947549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chair
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 397
+        height: 392
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2af842bb461335740800000000000000
+      internalID: 5139505908466093986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ea139c98c7bfb58458e80b7e4464ffd1
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Chair: 5139505908466093986
+      Fakeropenupdated_0: -424722700359894554
+      Fakeropenupdated_1: 6074896868944328784
+      Fakeropenupdated_10: 2422230237339399090
+      Fakeropenupdated_11: -501919865105977444
+      Fakeropenupdated_12: 6360357154592438439
+      Fakeropenupdated_13: -4684610817761571698
+      Fakeropenupdated_14: 9163680118814422337
+      Fakeropenupdated_15: 4247892447534084760
+      Fakeropenupdated_16: -5653768353809905313
+      Fakeropenupdated_17: 6036779693547166614
+      Fakeropenupdated_18: 4922462989899323600
+      Fakeropenupdated_19: -8445706968060947549
+      Fakeropenupdated_2: -1991660131977686002
+      Fakeropenupdated_3: -5570796907425199923
+      Fakeropenupdated_4: -7615529734834873585
+      Fakeropenupdated_5: 6861361841786316862
+      Fakeropenupdated_6: -6467773179667380335
+      Fakeropenupdated_7: 1003345551295078877
+      Fakeropenupdated_8: 5411552559995424762
+      Fakeropenupdated_9: 6313523555097979948
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

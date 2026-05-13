@@ -22,6 +22,7 @@ public class Player : StateMachineCore
     public PlayerBookHandler BookHandler => _bookHandler;
     public InputManager InputManager => _inputManager;
     private bool _isDead;
+    public bool IsDead => _isDead;
     private bool _canThrowBook;
 
     private void Start()
@@ -32,6 +33,12 @@ public class Player : StateMachineCore
 
     private void Update()
     {
+        if (_isDead)
+        {
+            machine.state.DoBranch();
+            return;
+        }
+
         SetFacingDirection();
         CheckThrow();
         SelectStates();
@@ -39,6 +46,7 @@ public class Player : StateMachineCore
     }
 private void CheckThrow()
 {
+    if (_isDead) return;
     if (_bookHandler == null) return;
     if (!_bookHandler.HasBook)
     {
@@ -110,8 +118,10 @@ private void CheckThrow()
 
     public void SetPlayerDead()
     {
-        machine.Set(_dead);
+        if (_isDead) return;
         _isDead = true;
+        _canThrowBook = false;
+        machine.Set(_dead, true);
     }
 
     public void SetPlayerTransition(int direction)
