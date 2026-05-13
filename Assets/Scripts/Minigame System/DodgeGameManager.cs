@@ -9,6 +9,7 @@ public class DodgeGameManager : MonoBehaviour
     [SerializeField] private GameObject _tongueObj;
     [SerializeField] private GameObject _heartObj;
     [SerializeField] private GameObject _encounterImage;
+    [SerializeField] private Animator _screenAnim;
 
     [Header("Animations")]
     [SerializeField] private AnimationClip _extendAnim;
@@ -23,6 +24,10 @@ public class DodgeGameManager : MonoBehaviour
 
     [Header("Heart Settings")]
     [SerializeField] private float _moveSpeed;
+
+    [Header("Delay")]
+    [SerializeField] private float _startDelay;
+    [SerializeField] private float _endDelay;
 
     [Header("Difficulty")]
     [SerializeField] private float _delayMult;
@@ -80,16 +85,18 @@ public class DodgeGameManager : MonoBehaviour
         if (!_gameStarted) return;
         if (!_player.IsHidden) EndGame();
         // Player input
-        MoveHeart();
+        if (_gameTimer < _gameDuration + _startDelay) MoveHeart();
         // Game logic
         _gameTimer += Time.deltaTime;
-        if (_gameTimer + _attackDuration < _gameDuration &&
+        if (_gameTimer < _startDelay) return;
+
+        if (_gameTimer + _attackDuration < _gameDuration + _startDelay &&
             Time.time - _lastSpawnTime > GetDelay() + _attackDuration)
         {
             StartCoroutine(SpawnTongue());
             _lastSpawnTime = Time.time;
         }
-        else if (_gameTimer >= _gameDuration)
+        else if (_gameTimer >= _gameDuration + _endDelay + _startDelay)
         {
             EndGame();
         }
@@ -146,7 +153,9 @@ public class DodgeGameManager : MonoBehaviour
 
     private void Hit()
     {
-        Debug.Log("hit player");
+        Debug.Log("Tongue hit player");
+        _currentAttempts--;
+        _screenAnim.SetTrigger("Shake");
 
         if (_currentAttempts <= 0)
         {

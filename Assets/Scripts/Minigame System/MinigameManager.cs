@@ -33,7 +33,7 @@ public class MinigameManager : MonoBehaviour
         GameStarted = true;
         TotalGameAmount++;
 
-        if (type == GameType.Random) type = (GameType)Random.Range(1, 2);
+        if (type == GameType.Random) type = (GameType)Random.Range(0, 2);
 
         switch (type)
         {

@@ -26,6 +26,10 @@ public class BeatGameManager : MonoBehaviour
     [SerializeField] private float _xOffset;
     [SerializeField] private int _attemptsNum;
 
+    [Header("Delay")]
+    [SerializeField] private float _startDelay;
+    [SerializeField] private float _endDelay;
+
     [Header("Difficulty")]
     [SerializeField] private float _delayMult;
     [SerializeField] private float _minDelay;
@@ -57,13 +61,24 @@ public class BeatGameManager : MonoBehaviour
 
     private void Start()
     {
-        _player = GameObject.FindGameObjectWithTag("Player").GetComponentInParent<Player>();
+        SetupPlayerReferences();
+    }
+
+    private void SetupPlayerReferences()
+    {
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj == null) return;
+        _player = playerObj.GetComponentInParent<Player>();
         _minigameInput = _player.GetComponent<MinigameInput>();
     }
 
     public void StartGame(float duration)
     {
         if (_gameStarted) return;
+        if (_player == null)
+        {
+            SetupPlayerReferences();
+        }
         _gameStarted = true;
         _gameTimer = 0;
         _duration = duration;
@@ -127,12 +142,15 @@ public class BeatGameManager : MonoBehaviour
         HandleInput();
         // Game logic
         _gameTimer += Time.deltaTime;
-        if (_gameTimer + _travelTime < _duration && Time.time - _lastBeatTime > GetDelay())
+
+        if (_gameTimer < _startDelay) return;
+        
+        if (_gameTimer + _travelTime < _duration + _startDelay && Time.time - _lastBeatTime > GetDelay())
         {
             SpawnBeat();
             _lastBeatTime = Time.time;
         }
-        else if (_gameTimer >= _duration)
+        else if (_gameTimer >= _duration + _endDelay + _startDelay)
         {
             EndGame();
         }

@@ -516,16 +516,19 @@ MonoBehaviour:
   _tongueObj: {fileID: 1045900710346653508}
   _heartObj: {fileID: 8532611713232365617}
   _encounterImage: {fileID: 2905442015747048416}
+  _screenAnim: {fileID: 7770758230426184860}
   _extendAnim: {fileID: 7400000, guid: a8cd30b2c3c3eed4ca59a06a3cb8a0b7, type: 2}
   _retractAnim: {fileID: 7400000, guid: ead3497682333374c87485e496246887, type: 2}
   _xBoundarySize: 300
-  _attackRange: 50
+  _attackRange: 100
   _delay: 0.5
   _attackDuration: 1
   _targetPlayerChance: 0.5
   _moveSpeed: 300
+  _startDelay: 1.5
+  _endDelay: 1.5
   _delayMult: 0.5
-  _minDelay: 0.1
+  _minDelay: 0
   _attemptsNum: 4
 --- !u!1 &7076460651757074412
 GameObject:
@@ -590,6 +593,8 @@ MonoBehaviour:
   _hitWindow: 0.25
   _xOffset: 300
   _attemptsNum: 4
+  _startDelay: 1.5
+  _endDelay: 1.5
   _delayMult: 0.5
   _minDelay: 0.1
 --- !u!95 &8177454563622776651
