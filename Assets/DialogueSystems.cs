@@ -8,8 +8,7 @@ public class DialogueSystems : MonoBehaviour
     [SerializeField] private TMP_Text _dialogue;
     [SerializeField] private GameObject _dialogueBox;
 
-    [Header("Test")]
-    [SerializeField] private DialogueData _testDialogue;
+    [Header("Dialogue")]
     [SerializeField] private float _typeSpeed = 0.03f;
 
 
@@ -90,5 +89,14 @@ public class DialogueSystems : MonoBehaviour
         }
 
         _isTyping = false;
+    }
+    public void StartSingleLine(string line)
+    {
+        _currentDialogue = null;
+        _currentLine = 0;
+        _isTalking = true;
+
+        _dialogueBox.SetActive(true);
+        StartCoroutine(TypeLine(line));
     }
 }
