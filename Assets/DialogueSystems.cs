@@ -24,14 +24,7 @@ public class DialogueSystems : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (!_isTalking)
-            {
-                StartDialogue(_testDialogue);
-            }
-            else
-            {
                 ContinueDialogue();
-            }
         }
     }
 

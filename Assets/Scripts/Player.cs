@@ -119,6 +119,11 @@ private void CheckThrow()
     public void SetPlayerDead()
     {
         if (_isDead) return;
+
+        PlayerPrefs.SetInt("HasDiedBefore", 1);
+        PlayerPrefs.Save();
+
+        
         _isDead = true;
         _canThrowBook = false;
         machine.Set(_dead, true);
