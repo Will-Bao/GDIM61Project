@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tooltipLines:
   - 'Tip: You can use a book to create a distraction.'
-  - 'Tip: Hiding under tables will make the anteater hard to find you.'
+  - 'Tip: Hiding under tables will make to difficult for the anteater to find you.'
   - 'Tip: Keep track of where the anteater is. Look at the layers.'
   - 'Tip: Anteaters are sensitive to sound.'
