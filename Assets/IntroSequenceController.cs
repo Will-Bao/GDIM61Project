@@ -18,20 +18,56 @@ public class IntroSequenceController : MonoBehaviour
     [SerializeField] private DialogueSystems _dialogueSystem;
     [SerializeField] private DialogueData _introDialogue;
 
+    [Header("Skip UI")]
+    [SerializeField] private GameObject _skipPrompt;
+
+    private bool _skipRequested;
+    private bool _canSkip;
+
     private IEnumerator Start()
     {
+        _canSkip = PlayerPrefs.GetInt("HasDiedBefore", 0) == 1;
+
         _player.SetActive(false);
         _introObject.SetActive(true);
         _playerUI.SetActive(false);
+        _skipPrompt.SetActive(_canSkip);
 
         _introAnimator.Play(_introAnimationName);
 
-        yield return new WaitForSeconds(_introAnimationLength);
+        float timer = 0f;
 
-        _dialogueSystem.StartDialogue(_introDialogue);
+        while (timer < _introAnimationLength && !_skipRequested)
+        {
+            if (_canSkip && Input.GetKeyDown(KeyCode.Escape))
+            {
+                _skipRequested = true;
+            }
 
-        yield return new WaitUntil(() => !_dialogueSystem.IsTalking);
+            timer += Time.deltaTime;
+            yield return null;
+        }
 
+        if (!_skipRequested)
+        {
+            _dialogueSystem.StartDialogue(_introDialogue);
+
+            yield return new WaitUntil(() =>
+            {
+                if (_canSkip && Input.GetKeyDown(KeyCode.Escape))
+                {
+                    _skipRequested = true;
+                }
+
+                return !_dialogueSystem.IsTalking || _skipRequested;
+            });
+        }
+        EndIntro();
+    }
+
+    private void EndIntro()
+    {
+        _skipPrompt.SetActive(false);
         _introObject.SetActive(false);
         _player.SetActive(true);
         _playerUI.SetActive(true);
