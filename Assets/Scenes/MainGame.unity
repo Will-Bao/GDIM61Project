@@ -2276,6 +2276,7 @@ MonoBehaviour:
   _introAnimationLength: 2
   _player: {fileID: 527348013}
   _dialogueSystem: {fileID: 1261623561}
+  _dialogueBox: {fileID: 1261623557}
   _introDialogue: {fileID: 11400000, guid: 96ce83bef80fa79498fa625f6edf01cf, type: 2}
   _skipPrompt: {fileID: 1657237981}
 --- !u!4 &2037911599

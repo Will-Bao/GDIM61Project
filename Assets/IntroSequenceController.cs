@@ -16,6 +16,8 @@ public class IntroSequenceController : MonoBehaviour
 
     [Header("Dialogue")]
     [SerializeField] private DialogueSystems _dialogueSystem;
+    [SerializeField] private GameObject _dialogueBox;
+
     [SerializeField] private DialogueData _introDialogue;
 
     [Header("Skip UI")]
@@ -62,6 +64,10 @@ public class IntroSequenceController : MonoBehaviour
                 return !_dialogueSystem.IsTalking || _skipRequested;
             });
         }
+        if (_skipRequested)
+        {
+            _dialogueBox.SetActive(false);
+        }
         EndIntro();
     }
 
@@ -71,5 +77,6 @@ public class IntroSequenceController : MonoBehaviour
         _introObject.SetActive(false);
         _player.SetActive(true);
         _playerUI.SetActive(true);
+        _dialogueBox.SetActive(false);
     }
 }
