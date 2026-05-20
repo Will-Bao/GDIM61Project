@@ -296,7 +296,7 @@ MonoBehaviour:
   _debug: 1
   _walk: {fileID: 8816080067939995594}
   _run: {fileID: 7280732437026483764}
-  _crounch: {fileID: 6480722974877584487}
+  _crouch: {fileID: 6480722974877584487}
   _dead: {fileID: 4049706027336870320}
   _levelTransition: {fileID: 9041169478419149461}
   _throw: {fileID: 540920864323446042}
@@ -387,6 +387,23 @@ MonoBehaviour:
       m_Processors: 
       m_Groups: 
       m_Action: Interact
+      m_Flags: 0
+    m_Flags: 0
+  CrouchAction:
+    m_Name: Crouch
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 24a84550-ed0f-4b1a-9071-70623b16e7cd
+    m_Processors: 
+    m_Interactions: Press
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 9ac70976-1379-44e3-9ee9-c3ad694abd1e
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Crouch
       m_Flags: 0
     m_Flags: 0
 --- !u!114 &7616177804757329783

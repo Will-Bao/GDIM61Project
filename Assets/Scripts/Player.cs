@@ -6,7 +6,7 @@ public class Player : StateMachineCore
     [Header("States")]
     [SerializeField] private PlayerMoveState _walk;
     [SerializeField] private PlayerMoveState _run;
-    [SerializeField] private PlayerMoveState _crounch;
+    [SerializeField] private PlayerMoveState _crouch;
     [SerializeField] private PlayerDeadState _dead;
     [SerializeField] private LevelTransitionState _levelTransition;
     [SerializeField] private PlayerThrowState _throw;
@@ -19,6 +19,7 @@ public class Player : StateMachineCore
     public bool IsHidden { get; private set; }
     public bool IsCrouching { get; private set; }
     public event Action<bool> OnCrouch;
+    private bool _canCrouchInput = true;
     public PlayerBookHandler BookHandler => _bookHandler;
     public InputManager InputManager => _inputManager;
     private bool _isDead;
@@ -44,29 +45,29 @@ public class Player : StateMachineCore
         SelectStates();
         machine.state.DoBranch();
     }
-private void CheckThrow()
-{
-    if (_isDead) return;
-    if (_bookHandler == null) return;
-    if (!_bookHandler.HasBook)
+    private void CheckThrow()
     {
+        if (_isDead) return;
+        if (_bookHandler == null) return;
+        if (!_bookHandler.HasBook)
+        {
+            _canThrowBook = false;
+            return;
+        }
+
+        if (!_inputManager.InteractPressed)
+        {
+            _canThrowBook = true;
+            return;
+        }
+
+        if (!_canThrowBook) return;
+        if (IsTransitioning()) return;
+        if (IsThrowing()) return;
+
         _canThrowBook = false;
-        return;
+        machine.Set(_throw);
     }
-
-    if (!_inputManager.InteractPressed)
-    {
-        _canThrowBook = true;
-        return;
-    }
-
-    if (!_canThrowBook) return;
-    if (IsTransitioning()) return;
-    if (IsThrowing()) return;
-
-    _canThrowBook = false;
-    machine.Set(_throw);
-}
     private bool IsThrowing()
     {
         return machine.state == _throw && !machine.state.isComplete;
@@ -79,14 +80,25 @@ private void CheckThrow()
     private void SelectStates()
     {
         if (_isDead || IsTransitioning() || IsThrowing()) return;
-        if (_inputManager.MoveInput.y < 0)
+
+        // Crouch Input
+        if (_inputManager.CrouchInput)
         {
-            SetCrouch(true);
-            machine.Set(_crounch);
+            if (!_canCrouchInput) return;
+            _canCrouchInput = false;
+            ToggleCrouch();
         }
         else
         {
-            SetCrouch(false);
+            _canCrouchInput = true;
+        }
+
+        if (IsCrouching)
+        {
+            machine.Set(_crouch);
+        }
+        else
+        {
             if (GameManager.Instance.PlayerSpotted)
             {
                 machine.Set(_run);
@@ -97,13 +109,11 @@ private void CheckThrow()
             }
         }
     }
-    private void SetCrouch(bool crouch)
+    private void ToggleCrouch()
     {
-        if (IsCrouching == crouch) return;
-
-        IsCrouching = crouch;
+        IsCrouching = !IsCrouching;
         OnCrouch?.Invoke(IsCrouching);
-        _spriteRenderer.sortingOrder = crouch ? -5 : 0;
+        _spriteRenderer.sortingOrder = IsCrouching ? -5 : 0;
     }
 
     private bool IsTransitioning()
