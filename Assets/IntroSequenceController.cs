@@ -24,6 +24,8 @@ public class IntroSequenceController : MonoBehaviour
     [SerializeField] private GameObject _skipPrompt;
     [Header("ControlScheme")]
     [SerializeField] private GameObject _controls;
+    [Header("Space to Skip")]
+    [SerializeField] private GameObject _space;
 
 
     private bool _skipRequested;
@@ -32,6 +34,7 @@ public class IntroSequenceController : MonoBehaviour
     private IEnumerator Start()
     {
         _canSkip = PlayerPrefs.GetInt("HasDiedBefore", 0) == 1;
+        _space.SetActive(true);
         _controls.SetActive(false);
         _player.SetActive(false);
         _introObject.SetActive(true);
@@ -81,7 +84,7 @@ public class IntroSequenceController : MonoBehaviour
         _player.SetActive(true);
         _playerUI.SetActive(true);
         _dialogueBox.SetActive(false);
-
+        _space.SetActive(false);
         _controls.SetActive(true);
 
         yield return new WaitForSeconds(3f);

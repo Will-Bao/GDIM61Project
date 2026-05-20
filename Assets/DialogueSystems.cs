@@ -10,6 +10,8 @@ public class DialogueSystems : MonoBehaviour
 
     [Header("Dialogue")]
     [SerializeField] private float _typeSpeed = 0.03f;
+    [SerializeField] private bool _autoProgress = false;
+    [SerializeField] private float _autoProgressDelay = 2f;
 
 
     private DialogueData _currentDialogue;
@@ -18,6 +20,8 @@ public class DialogueSystems : MonoBehaviour
     public bool IsTalking => _isTalking;
     private Coroutine _typingCoroutine;
     private bool _isTyping;
+
+    private Coroutine _autoProgressCoroutine;
 
     private void Update()
     {
@@ -42,6 +46,12 @@ public class DialogueSystems : MonoBehaviour
     public void ContinueDialogue()
     {
         if (!_isTalking) return;
+
+        if (_autoProgressCoroutine != null)
+        {
+            StopCoroutine(_autoProgressCoroutine);
+            _autoProgressCoroutine = null;
+        }
 
         if (_isTyping)
         {
@@ -89,6 +99,22 @@ public class DialogueSystems : MonoBehaviour
         }
 
         _isTyping = false;
+
+        if (_autoProgress)
+        {
+            if (_autoProgressCoroutine != null)
+            {
+                StopCoroutine(_autoProgressCoroutine);
+            }
+
+            _autoProgressCoroutine = StartCoroutine(AutoProgressLine());
+        }
+    }
+    private IEnumerator AutoProgressLine()
+    {
+        yield return new WaitForSeconds(_autoProgressDelay);
+
+        ContinueDialogue();
     }
     public void StartSingleLine(string line)
     {
