@@ -1219,7 +1219,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dialogue: {fileID: 931931844}
   _dialogueBox: {fileID: 1261623557}
-  _testDialogue: {fileID: 11400000, guid: 96ce83bef80fa79498fa625f6edf01cf, type: 2}
   _typeSpeed: 0.03
 --- !u!1 &1357738498
 GameObject:
@@ -1819,9 +1818,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Space
-
-'
+  m_text: Esc
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 73f1c74c6f255f74da65948b5be5d2d2, type: 2}
   m_sharedMaterial: {fileID: -5210052940122374300, guid: 73f1c74c6f255f74da65948b5be5d2d2, type: 2}
@@ -2279,6 +2276,7 @@ MonoBehaviour:
   _introAnimationLength: 2
   _player: {fileID: 527348013}
   _dialogueSystem: {fileID: 1261623561}
+  _dialogueBox: {fileID: 1261623557}
   _introDialogue: {fileID: 11400000, guid: 96ce83bef80fa79498fa625f6edf01cf, type: 2}
   _skipPrompt: {fileID: 1657237981}
 --- !u!4 &2037911599
@@ -2543,25 +2541,7 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 6914463794811660057, guid: 58649aa243e10bd4ba41b424682f9789, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 283469943272771139, guid: 58649aa243e10bd4ba41b424682f9789, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 5484180638314389858, guid: 58649aa243e10bd4ba41b424682f9789, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 7175354718324727682, guid: 58649aa243e10bd4ba41b424682f9789, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 4671372734895327316, guid: 58649aa243e10bd4ba41b424682f9789, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 4046634336690568424, guid: 58649aa243e10bd4ba41b424682f9789, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 5955708460997678050, guid: 58649aa243e10bd4ba41b424682f9789, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58649aa243e10bd4ba41b424682f9789, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
