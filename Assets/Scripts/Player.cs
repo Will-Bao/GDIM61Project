@@ -7,6 +7,7 @@ public class Player : StateMachineCore
     [SerializeField] private PlayerMoveState _walk;
     [SerializeField] private PlayerMoveState _run;
     [SerializeField] private PlayerMoveState _crouch;
+    [SerializeField] private PlayerStunnedState _stunned;
     [SerializeField] private PlayerDeadState _dead;
     [SerializeField] private LevelTransitionState _levelTransition;
     [SerializeField] private PlayerThrowState _throw;
@@ -64,13 +65,10 @@ public class Player : StateMachineCore
         if (!_canThrowBook) return;
         if (IsTransitioning()) return;
         if (IsThrowing()) return;
+        if (IsStunned()) return;
 
         _canThrowBook = false;
         machine.Set(_throw);
-    }
-    private bool IsThrowing()
-    {
-        return machine.state == _throw && !machine.state.isComplete;
     }
     private void FixedUpdate()
     {
@@ -79,7 +77,7 @@ public class Player : StateMachineCore
 
     private void SelectStates()
     {
-        if (_isDead || IsTransitioning() || IsThrowing()) return;
+        if (_isDead || IsTransitioning() || IsThrowing() || IsStunned()) return;
 
         // Crouch Input
         if (_inputManager.CrouchInput)
@@ -120,7 +118,15 @@ public class Player : StateMachineCore
     {
         return (machine.state == _levelTransition && !machine.state.isComplete);
     }
+    private bool IsThrowing()
+    {
+        return machine.state == _throw && !machine.state.isComplete;
+    }
 
+    private bool IsStunned()
+    {
+        return (machine.state == _stunned);
+    }
     public void ToggleHiding(bool hiding)
     {
         IsHidden = hiding;
@@ -143,5 +149,11 @@ public class Player : StateMachineCore
     {
         _levelTransition.SetDirection(direction);
         machine.Set(_levelTransition);
+    }
+
+    public void SetPlayerStunned(bool stunned)
+    {
+        if (stunned) machine.Set(_stunned);
+        else machine.Set(_walk);
     }
 }
