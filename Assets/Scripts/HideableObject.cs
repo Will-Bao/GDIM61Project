@@ -23,6 +23,8 @@ public class HideableObject : MonoBehaviour
             _player = player;
 
             player.ToggleHiding(player.IsCrouching);
+            LightingManager.Instance.SetTableHidingDarkness(player.IsCrouching);
+
             player.OnCrouch += HandleCrouch;
         }
     }
@@ -36,6 +38,7 @@ public class HideableObject : MonoBehaviour
             _player = null;
 
             player.ToggleHiding(false);
+            LightingManager.Instance.SetTableHidingDarkness(false);
             player.OnCrouch -= HandleCrouch;
             //ToggleCollision(false);
         }
@@ -46,6 +49,7 @@ public class HideableObject : MonoBehaviour
         if (!_isPlayerInside || !_player) return;
 
         _player.ToggleHiding(isCrouching);
+        LightingManager.Instance.SetTableHidingDarkness(isCrouching);
     }
 
     private void ToggleCollision(bool active)

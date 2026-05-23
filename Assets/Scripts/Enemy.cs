@@ -182,4 +182,9 @@ public class Enemy : StateMachineCore
             Debug.Log($"Enemy teleported to layer {targetLayer}");
         }
     }
+    public void ForceToCurrentPlayerLayer()
+    {
+        int shiftAmount = LevelManager.Instance.CurrentLevel - _levelTracker.CurrentLayer;
+        _levelTracker.TransitionNewLayer(shiftAmount);
+    }
 }

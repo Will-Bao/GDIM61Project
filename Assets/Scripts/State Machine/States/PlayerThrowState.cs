@@ -11,6 +11,7 @@ public class PlayerThrowState : State
     private Player _player;
     private bool _hasThrown;
 
+
     public override void Enter()
     {
         anim.Play(_throwAnim.name);
@@ -18,15 +19,20 @@ public class PlayerThrowState : State
         _player = core as Player;
         _hasThrown = false;
         isComplete = false;
+
+        rb.linearVelocity = Vector2.zero;
     }
 
     public override void Do()
     {
         if (_player == null || _player.IsDead)
         {
+            rb.linearVelocity = Vector2.zero;
             isComplete = true;
             return;
         }
+
+        rb.linearVelocity = Vector2.zero;
 
         if (!_hasThrown)
         {
@@ -41,5 +47,9 @@ public class PlayerThrowState : State
         {
             isComplete = true;
         }
+    }
+    public override void FixedDo()
+    {
+        rb.linearVelocity = Vector2.zero;
     }
 }

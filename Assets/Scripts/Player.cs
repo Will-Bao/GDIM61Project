@@ -139,7 +139,6 @@ public class Player : StateMachineCore
         PlayerPrefs.SetInt("HasDiedBefore", 1);
         PlayerPrefs.Save();
 
-        
         _isDead = true;
         _canThrowBook = false;
         machine.Set(_dead, true);

@@ -12,9 +12,10 @@ public class DialogueTrigger : MonoBehaviour
     private void Awake()
     {
         if (_marker == null)
-        {
             _marker = GetComponent<LevelMarker>();
-        }
+
+        if (_dialogueSystem == null)
+            _dialogueSystem = FindFirstObjectByType<DialogueSystems>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -23,7 +24,7 @@ public class DialogueTrigger : MonoBehaviour
         if (!other.GetComponentInParent<InputManager>()) return;
 
         if (_marker != null && LevelManager.Instance.CurrentLevel != _marker.CurrentLayer) return;
-
+        Debug.Log("Starting Dialogue");
         _dialogueSystem.StartDialogue(_dialogueData);
         _hasPlayed = true;
     }

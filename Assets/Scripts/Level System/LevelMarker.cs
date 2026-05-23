@@ -12,4 +12,8 @@ public class LevelMarker : MonoBehaviour
     {
         CurrentLayer = GetComponentInParent<LevelParallax>().LayerNum;
     }
+    public void SetCurrentLayer(int newLayer)
+    {
+        CurrentLayer = newLayer;
+    }
 }
