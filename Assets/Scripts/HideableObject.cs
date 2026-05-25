@@ -5,6 +5,7 @@ public class HideableObject : MonoBehaviour
 {
     [Header("Collider")]
     [SerializeField] private GameObject _collider;
+    [SerializeField] private LevelMarker _levelMarker;
 
     private bool _isPlayerInside;
     private Player _player;
@@ -17,7 +18,8 @@ public class HideableObject : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Player player = collision.GetComponentInParent<Player>();
-        if (collision.CompareTag("Player") && player != null)
+        if (collision.CompareTag("Player") && player != null &&
+            _levelMarker.CurrentLayer == LevelManager.Instance.CurrentLevel)
         {
             _isPlayerInside = true;
             _player = player;
@@ -32,7 +34,8 @@ public class HideableObject : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         Player player = collision.GetComponentInParent<Player>();
-        if (collision.CompareTag("Player") && player != null)
+        if (collision.CompareTag("Player") && player != null &&
+            _levelMarker.CurrentLayer == LevelManager.Instance.CurrentLevel)
         {
             _isPlayerInside = false;
             _player = null;
