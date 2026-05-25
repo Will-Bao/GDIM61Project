@@ -161,7 +161,8 @@ public class Enemy : StateMachineCore
     private void TeleportCheck()
     {
         if (_levelTracker.CurrentLayer >= LevelManager.Instance.CurrentLevel ||
-            LevelManager.Instance.CurrentLevel == LevelManager.Instance.GetLastLevel())
+            LevelManager.Instance.CurrentLevel == LevelManager.Instance.GetLastLevel() ||
+            IsChasing())
         {
             _teleportTimer = 0f;
             return;
