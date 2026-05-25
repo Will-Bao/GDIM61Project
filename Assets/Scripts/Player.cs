@@ -152,6 +152,7 @@ public class Player : StateMachineCore
 
     public void SetPlayerStunned(bool stunned)
     {
+        if (_isDead) return;
         if (stunned) machine.Set(_stunned);
         else machine.Set(_walk);
     }

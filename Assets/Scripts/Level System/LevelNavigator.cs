@@ -20,6 +20,7 @@ public class LevelNavigator : MonoBehaviour
     private void Update()
     {
         UpdateIndicators();
+        if (_player.IsDead) return;
         if (_isNearExit && _input.MoveInput.y > 0)
         {
             LevelManager.Instance.NextLevel();

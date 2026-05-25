@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: TripEncounter
   m_EditorClassIdentifier: 
   _steps:
-  - {fileID: 11400000, guid: 93d0637e84fe86441be461418c2fbb4a, type: 2}
   - {fileID: 11400000, guid: 54a7095e038be444381f0684454eba45, type: 2}
-  - {fileID: 11400000, guid: 01e8a611c3ca5d749a42b83b60a18ae2, type: 2}
+  - {fileID: 11400000, guid: 93d0637e84fe86441be461418c2fbb4a, type: 2}
