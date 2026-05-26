@@ -47,7 +47,7 @@ public class IntroSequenceController : MonoBehaviour
 
         while (timer < _introAnimationLength && !_skipRequested)
         {
-            if (_canSkip && Input.GetKeyDown(KeyCode.Escape))
+            if (_canSkip && Input.GetKeyDown(KeyCode.Tab))
             {
                 _skipRequested = true;
             }
@@ -62,7 +62,7 @@ public class IntroSequenceController : MonoBehaviour
 
             yield return new WaitUntil(() =>
             {
-                if (_canSkip && Input.GetKeyDown(KeyCode.Escape))
+                if (_canSkip && Input.GetKeyDown(KeyCode.Tab))
                 {
                     _skipRequested = true;
                 }
