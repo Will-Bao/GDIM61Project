@@ -8,6 +8,7 @@ public class ElevatorController : MonoBehaviour
     [Header("Gameplay")]
     [SerializeField] private GameObject _player;
     [SerializeField] private GameObject _playerUI;
+    [SerializeField] private GameObject _videoTexture;
 
     [Header("Cutscene Videos")]
     [SerializeField] private GameObject _videoVisuals;
@@ -42,6 +43,7 @@ public class ElevatorController : MonoBehaviour
         {
             _dialogueSystem = FindFirstObjectByType<DialogueSystems>();
         }
+        _videoTexture.SetActive(false);
     }
     private IEnumerator EncounterRoutine()
     {
@@ -56,6 +58,7 @@ public class ElevatorController : MonoBehaviour
 
         _player.SetActive(false);
         _playerUI.SetActive(false);
+        _videoTexture.SetActive(true);
         _videoVisuals.SetActive(true);
 
         if (_encounterDialogue != null && _dialogueSystem != null)
@@ -90,6 +93,7 @@ public class ElevatorController : MonoBehaviour
         _videoPlayer.Stop();
         _videoPlayer.clip = null;
         _videoVisuals.SetActive(false);
+        _videoTexture.SetActive(false);
 
         _player.SetActive(true);
         _playerUI.SetActive(true);
