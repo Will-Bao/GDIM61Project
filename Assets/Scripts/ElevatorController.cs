@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Video;
 
@@ -11,7 +12,7 @@ public class ElevatorController : MonoBehaviour
     [Header("Cutscene Videos")]
     [SerializeField] private GameObject _videoVisuals;
     [SerializeField] private VideoPlayer _videoPlayer;
-    [SerializeField] private VideoClip[] _videoClips;
+    [SerializeField] private string[] _videoClips;
 
     [Header("Dialogue")]
     [SerializeField] private DialogueSystems _dialogueSystem;
@@ -67,7 +68,7 @@ public class ElevatorController : MonoBehaviour
         }
         for (int i = 0; i < _videoClips.Length; i++)
         {
-            Debug.Log("Playing: " + _videoClips[i].name);
+            Debug.Log("Playing: " + _videoClips[i]);
             yield return PlayVideo(_videoClips[i]);
 
             if (i == 0 && _elevatorRumbleSFX != null)
@@ -114,12 +115,13 @@ public class ElevatorController : MonoBehaviour
         }
         _isPlaying = false;
     }
-    private IEnumerator PlayVideo(VideoClip clip)
+    private IEnumerator PlayVideo(string clip)
     {
         if (clip == null || _videoPlayer == null) yield break;
 
         _videoPlayer.Stop();
-        _videoPlayer.clip = clip;
+        _videoPlayer.source = VideoSource.Url;
+        _videoPlayer.url = System.IO.Path.Combine(Application.streamingAssetsPath, clip);
         _videoPlayer.isLooping = false;
         _videoPlayer.Prepare();
 

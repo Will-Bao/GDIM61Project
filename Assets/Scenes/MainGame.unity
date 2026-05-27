@@ -767,11 +767,11 @@ RectTransform:
   - {fileID: 610030288}
   m_Father: {fileID: 307214396}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -82, y: 206}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -81.999985, y: -73.500015}
   m_SizeDelta: {x: 46, y: 17}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &516672729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1226,7 +1226,7 @@ VideoPlayer:
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: <noninit>
-  m_RenderMode: 1
+  m_RenderMode: 2
   m_AspectRatio: 5
   m_DataSource: 0
   m_TimeUpdateMode: 2
@@ -3007,11 +3007,11 @@ RectTransform:
   - {fileID: 1743127626}
   m_Father: {fileID: 307214396}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -51, y: 246}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -51.000015, y: -33.499985}
   m_SizeDelta: {x: 46, y: 17}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1657237983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3299,7 +3299,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1687280291
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3802,8 +3802,8 @@ MonoBehaviour:
   _videoVisuals: {fileID: 1687280290}
   _videoPlayer: {fileID: 626636778}
   _videoClips:
-  - {fileID: 32900000, guid: 9c3edcf50edebb646a1ce8d2bc1df98f, type: 3}
-  - {fileID: 32900000, guid: 53f608d552fb21047a23622caee4489e, type: 3}
+  - Elevator_Close.mp4
+  - Anteater_Open.mp4
   _dialogueSystem: {fileID: 386977687}
   _encounterDialogue: {fileID: 11400000, guid: 8a823c450d1bad54da989cdc805adb6f, type: 2}
   _elevatorDingSFX: {fileID: 8300000, guid: 1b3a49d583b4aed448cfb99a5b16feca, type: 3}
