@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2280554193435485483}
   - component: {fileID: 4839673863233525232}
   - component: {fileID: 644541804852999635}
+  - component: {fileID: 2770290903751271270}
   m_Layer: 5
   m_Name: Heart
   m_TagString: Untagged
@@ -35,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4839673863233525232
 CanvasRenderer:
@@ -65,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3499196816344210916, guid: f7f6b8ce369eed741817be5229cc1241, type: 3}
+  m_Sprite: {fileID: 4606908045521496030, guid: b0f1487f0a7a2e3478fb18d1b14e09e2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -75,6 +76,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2770290903751271270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787813965148063383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0}
+  m_EffectDistance: {x: 5, y: 5}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1045900710346653508
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,6 +536,7 @@ MonoBehaviour:
   _tongueObj: {fileID: 1045900710346653508}
   _heartObj: {fileID: 8532611713232365617}
   _screenAnim: {fileID: 7770758230426184860}
+  _heartAnim: {fileID: 2564565971530324986}
   _extendAnim: {fileID: 7400000, guid: a8cd30b2c3c3eed4ca59a06a3cb8a0b7, type: 2}
   _retractAnim: {fileID: 7400000, guid: ead3497682333374c87485e496246887, type: 2}
   _xBoundarySize: 300
@@ -803,6 +820,8 @@ GameObject:
   - component: {fileID: 5593495147033030803}
   - component: {fileID: 7097600495248051861}
   - component: {fileID: 8735021422223794920}
+  - component: {fileID: 2564565971530324986}
+  - component: {fileID: 1388360457894784773}
   m_Layer: 5
   m_Name: Heart
   m_TagString: Untagged
@@ -827,7 +846,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 169.03653}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7097600495248051861
 CanvasRenderer:
@@ -857,7 +876,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3499196816344210916, guid: f7f6b8ce369eed741817be5229cc1241, type: 3}
+  m_Sprite: {fileID: 4606908045521496030, guid: b0f1487f0a7a2e3478fb18d1b14e09e2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -867,3 +886,40 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &2564565971530324986
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8532611713232365617}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 25227c09a353ab9418881b7e62d6e90a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1388360457894784773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8532611713232365617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 0, b: 0, a: 0}
+  m_EffectDistance: {x: 5, y: 5}
+  m_UseGraphicAlpha: 1

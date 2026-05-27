@@ -9,6 +9,7 @@ public class DodgeGameManager : MonoBehaviour
     [SerializeField] private GameObject _tongueObj;
     [SerializeField] private GameObject _heartObj;
     [SerializeField] private Animator _screenAnim;
+    [SerializeField] private Animator _heartAnim;
 
     [Header("Animations")]
     [SerializeField] private AnimationClip _extendAnim;
@@ -168,6 +169,7 @@ public class DodgeGameManager : MonoBehaviour
         Debug.Log("Tongue hit player");
         _currentAttempts--;
         _screenAnim.SetTrigger("Shake");
+        _heartAnim.SetTrigger("OnHit");
 
         if (_currentAttempts <= 0)
         {
