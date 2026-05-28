@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f1f71e865af38f4f8896bcd45c41788, type: 3}
   m_Name: AlertWait
   m_EditorClassIdentifier: 
-  duration: 1
+  duration: 0.3

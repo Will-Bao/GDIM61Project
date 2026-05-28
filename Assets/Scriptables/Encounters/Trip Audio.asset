@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5798334549f7244fbaa0b1f20473fe7, type: 3}
   m_Name: Trip Audio
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 0}
+  _audioClip: {fileID: 8300000, guid: 0a866fc2154a4e14791751af250b01dc, type: 3}
   volume: 1
   isRegulated: 0
   isPitched: 1
