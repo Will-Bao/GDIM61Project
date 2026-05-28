@@ -15,6 +15,9 @@ public class DodgeGameManager : MonoBehaviour
     [SerializeField] private AnimationClip _extendAnim;
     [SerializeField] private AnimationClip _retractAnim;
 
+    [Header("Audio")]
+    [SerializeField] private AudioClip _beatAudio;
+
     [Header("Attack Settings")]
     [SerializeField] private float _xBoundarySize;
     [SerializeField] private float _attackRange;
@@ -170,6 +173,7 @@ public class DodgeGameManager : MonoBehaviour
         _currentAttempts--;
         _screenAnim.SetTrigger("Shake");
         _heartAnim.SetTrigger("OnHit");
+        SoundFXManager.instance.PlaySoundFXClip(_beatAudio, transform, 1f, regulated: false, randPitch: true);
 
         if (_currentAttempts <= 0)
         {

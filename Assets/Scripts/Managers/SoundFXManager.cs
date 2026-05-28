@@ -86,4 +86,14 @@ public class SoundFXManager : MonoBehaviour
         yield return new WaitForSeconds(delay);
         _currentSFX.Remove(clip);
     }
+
+    private IEnumerator SetThemeVolume(float targetVolume)
+    {
+        float themeVolume = _themeAudioSource.volume;
+        while (_themeAudioSource.volume != targetVolume)
+        {
+            Mathf.Lerp(themeVolume, targetVolume, Time.deltaTime);
+            yield break;
+        }
+    }
 }

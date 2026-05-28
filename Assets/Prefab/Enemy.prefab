@@ -334,6 +334,7 @@ MonoBehaviour:
   _movement: {fileID: 997381869543015884}
   _impulseSource: {fileID: 2701656654365847893}
   _footstepAudioClip: {fileID: 8300000, guid: 6e5bc8acef033f547b51fe1c8de12005, type: 3}
+  _screechClip: {fileID: 8300000, guid: 2bbfe20bdd4c2d34eb135b3efd5ec510, type: 3}
   _chaseSpeed: 15
   _stoppingDistance: 0.3
   _chaseShakeAmount: 0.5
@@ -432,6 +433,7 @@ MonoBehaviour:
   _movement: {fileID: 997381869543015884}
   _impulseSource: {fileID: 2701656654365847893}
   _footstepAudioClip: {fileID: 8300000, guid: 6e5bc8acef033f547b51fe1c8de12005, type: 3}
+  _screechClip: {fileID: 8300000, guid: fa42a500f463b3e49b90402dcb73092a, type: 3}
   _chaseSpeed: 6
   _stoppingDistance: 0.1
   _chaseShakeAmount: 0.5

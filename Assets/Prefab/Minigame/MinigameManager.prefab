@@ -539,6 +539,7 @@ MonoBehaviour:
   _heartAnim: {fileID: 2564565971530324986}
   _extendAnim: {fileID: 7400000, guid: a8cd30b2c3c3eed4ca59a06a3cb8a0b7, type: 2}
   _retractAnim: {fileID: 7400000, guid: ead3497682333374c87485e496246887, type: 2}
+  _beatAudio: {fileID: 8300000, guid: d1e194705c93a774b9dfc5f3e283a569, type: 3}
   _xBoundarySize: 300
   _attackRange: 100
   _delay: 0.5
@@ -742,7 +743,7 @@ MonoBehaviour:
   _screenAnim: {fileID: 7770758230426184860}
   _beatParent: {fileID: 8375876393917823042}
   _heartObject: {fileID: 787813965148063383}
-  _beatClip: {fileID: 8300000, guid: 5ca7bb6cf5a7cf9479b9ae8a8d2d36e5, type: 3}
+  _beatClip: {fileID: 8300000, guid: d1e194705c93a774b9dfc5f3e283a569, type: 3}
   _travelTime: 1
   _delay: 1
   _hitWindow: 0.25

@@ -15,6 +15,7 @@ public class EnemyChaseState : State
 
     [Header("Audio")]
     [SerializeField] private AudioClip _footstepAudioClip;
+    [SerializeField] private AudioClip _screechClip;
 
     [Header("Chase")]
     [SerializeField] private float _chaseSpeed;
@@ -35,6 +36,7 @@ public class EnemyChaseState : State
             return;
         }
 
+        SoundFXManager.instance.PlaySoundFXClip(_screechClip, core.transform, 1f, regulated: false, randPitch: true);
         _shakeTimer = 0f;
     }
 
