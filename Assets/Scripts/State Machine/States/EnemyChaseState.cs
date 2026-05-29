@@ -36,7 +36,7 @@ public class EnemyChaseState : State
             return;
         }
 
-        SoundFXManager.instance.PlaySoundFXClip(_screechClip, core.transform, 1f, regulated: false, randPitch: true);
+        if (_screechClip != null) SoundFXManager.instance.PlaySoundFXClip(_screechClip, core.transform, 1f, regulated: false, randPitch: true);
         _shakeTimer = 0f;
     }
 
