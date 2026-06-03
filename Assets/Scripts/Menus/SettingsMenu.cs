@@ -13,6 +13,7 @@ public class SettingsMenu : MonoBehaviour
     [Header("Components")]
     [SerializeField] private GameObject _panel;
     [SerializeField] private Image _bgImg;
+    [SerializeField] private MenuPanelFade _fade;
 
     private const string MAIN_VOLUME_KEY = "MainVolume";
     private const string SFX_VOLUME_KEY = "SFXVolume";
@@ -36,7 +37,9 @@ public class SettingsMenu : MonoBehaviour
 
     public void ToggleSettingsMenu(bool isOpen)
     {
-        _panel.SetActive(isOpen);
+        if (isOpen) _panel.SetActive(true);
+        else if (_fade != null) _fade.FadeOut();
+        else _panel.SetActive(false);
         _bgImg.enabled = isOpen;
         _isOpened = isOpen;
     }
