@@ -37,11 +37,20 @@ public class SettingsMenu : MonoBehaviour
 
     public void ToggleSettingsMenu(bool isOpen)
     {
-        if (isOpen) _panel.SetActive(true);
-        else if (_fade != null) _fade.FadeOut();
+        _isOpened = isOpen;
+        if (isOpen)
+        {
+            _panel.SetActive(true);
+            _fade.FadeIn();
+            Debug.Log("Menu opened");
+        }
+        else if (_fade != null)
+        {
+            _fade.FadeOut();
+            Debug.Log("Menu closed");
+        }
         else _panel.SetActive(false);
         _bgImg.enabled = isOpen;
-        _isOpened = isOpen;
     }
 
     public void SetMainVolume(float amount)

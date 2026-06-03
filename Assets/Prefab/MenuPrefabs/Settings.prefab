@@ -2213,10 +2213,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7765c1999b486c544af74408a1958172, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canvasGroup: {fileID: 2375854557449272875}
-  _rectTrans: {fileID: 0}
   _offset: {x: 0, y: -100}
   _fadeDuration: 0.5
+  _fadeOnEnable: 0
 --- !u!1 &7290269870356264180
 GameObject:
   m_ObjectHideFlags: 0

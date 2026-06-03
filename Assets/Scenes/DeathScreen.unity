@@ -674,6 +674,8 @@ GameObject:
   - component: {fileID: 1633679351}
   - component: {fileID: 1633679353}
   - component: {fileID: 1633679352}
+  - component: {fileID: 1633679355}
+  - component: {fileID: 1633679354}
   m_Layer: 5
   m_Name: DeathTooltips
   m_TagString: Untagged
@@ -801,6 +803,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1633679350}
   m_CullTransparentMesh: 1
+--- !u!114 &1633679354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633679350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7765c1999b486c544af74408a1958172, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _offset: {x: 0, y: 100}
+  _fadeDuration: 1
+--- !u!225 &1633679355
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633679350}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1752683625
 GameObject:
   m_ObjectHideFlags: 0
