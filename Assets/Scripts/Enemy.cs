@@ -15,6 +15,7 @@ public class Enemy : StateMachineCore
     [Header("Components")]
     [SerializeField] private CinemachineImpulseSource _cameraImpulse;
     [SerializeField] private LevelTracker _levelTracker;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
 
     [Header("Player Detection")]
     [SerializeField] private LayerMask _playerLayer;
@@ -30,10 +31,12 @@ public class Enemy : StateMachineCore
     [Header("Random Teleport")]
     [SerializeField] private float _teleportChance;
     [SerializeField] private float _checkDelay;
+    [SerializeField] private float _invisibleDuration; // set to same as transition duration
 
     private Vector2 _targetPos;
     private float _shakeTimer = 0f;
     private float _teleportTimer = 0f;
+    private float _transitionTimer = 0f;
 
     private void Start()
     {
@@ -43,7 +46,8 @@ public class Enemy : StateMachineCore
 
     private void Update()
     {
-        ToggleVisibility(_levelTracker.CurrentLayer >= LevelManager.Instance.CurrentLevel);
+        ToggleVisibility(_levelTracker.CurrentLayer >= LevelManager.Instance.CurrentLevel &&
+                         _transitionTimer <= 0);
         TeleportCheck();
         SetFacingDirection();
         SelectStates();
@@ -160,6 +164,13 @@ public class Enemy : StateMachineCore
 
     private void TeleportCheck()
     {
+        // Transition check
+        if (_transitionTimer > 0)
+        {
+            _transitionTimer -= Time.deltaTime;
+        }
+
+        // Timer check
         if (_levelTracker.CurrentLayer >= LevelManager.Instance.CurrentLevel ||
             LevelManager.Instance.CurrentLevel == LevelManager.Instance.GetLastLevel() ||
             IsChasing())
@@ -172,10 +183,16 @@ public class Enemy : StateMachineCore
             _teleportTimer += Time.deltaTime;
         }
 
+        // Attempt to teleport if above delay
         if (_teleportTimer >= _checkDelay)
         {
             _teleportTimer = 0f;
             if (Random.value > _teleportChance) return;
+
+            // Set invisible
+            LevelParallax layer = LevelManager.Instance.GetLevelParallax(_levelTracker.CurrentLayer);
+            _transitionTimer = layer.TransitionTime;
+
             // Teleport
             int targetLayer = Random.Range(LevelManager.Instance.CurrentLevel + 1, LevelManager.Instance.GetLastLevel());
             int shiftAmount = targetLayer - _levelTracker.CurrentLayer;
