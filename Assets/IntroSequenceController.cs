@@ -89,6 +89,13 @@ public class IntroSequenceController : MonoBehaviour
 
         yield return new WaitForSeconds(3f);
 
-        _controls.SetActive(false);
+        if (_controls.TryGetComponent(out MenuPanelFade fade))
+        {
+            fade.FadeOut();
+        }
+        else
+        {
+            _controls.SetActive(false);
+        }
     }
 }
