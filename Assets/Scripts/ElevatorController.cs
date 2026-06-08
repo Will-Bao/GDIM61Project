@@ -22,6 +22,7 @@ public class ElevatorController : MonoBehaviour
     [Header("Audio")]
     [SerializeField] private AudioClip _elevatorDingSFX;
     [SerializeField] private AudioClip _elevatorRumbleSFX;
+    [SerializeField] private AudioClip _anteaterScreech;
     [SerializeField] private float _sfxVolume = 1f;
 
     [Header("AnteaterSpawn")]
@@ -76,6 +77,16 @@ public class ElevatorController : MonoBehaviour
 
             if (i == 0 && _elevatorRumbleSFX != null)
             {
+                if (_anteaterScreech != null)
+                {
+                    SoundFXManager.instance.PlaySoundFXClip(
+                    _anteaterScreech,
+                    transform,
+                    _sfxVolume,
+                    false,
+                    false
+                    );
+                }
                 SoundFXManager.instance.PlaySoundFXClip(
                     _elevatorRumbleSFX,
                     transform,

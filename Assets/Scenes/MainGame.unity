@@ -3967,6 +3967,7 @@ MonoBehaviour:
   _encounterDialogue: {fileID: 11400000, guid: 8a823c450d1bad54da989cdc805adb6f, type: 2}
   _elevatorDingSFX: {fileID: 8300000, guid: 1b3a49d583b4aed448cfb99a5b16feca, type: 3}
   _elevatorRumbleSFX: {fileID: 8300000, guid: d85d8a4c3bad81f4b8d41416c6331573, type: 3}
+  _anteaterScreech: {fileID: 8300000, guid: 2bbfe20bdd4c2d34eb135b3efd5ec510, type: 3}
   _sfxVolume: 1
   _anteater: {fileID: 399662009}
   _anteaterOffset: {x: -5, y: 0, z: 0}
